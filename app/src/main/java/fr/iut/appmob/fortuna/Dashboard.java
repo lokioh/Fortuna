@@ -43,7 +43,7 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 animateBtn();
-                Toast.makeText(Dashboard.this, "Add new credit card clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Dashboard.this, "Add new deposit clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -51,7 +51,7 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 animateBtn();
-                Toast.makeText(Dashboard.this, "Add new spending clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Dashboard.this, "Add new credit card clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -59,7 +59,7 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 animateBtn();
-                Toast.makeText(Dashboard.this, "Add new deposit clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Dashboard.this, "Add new spending clicked", Toast.LENGTH_SHORT).show();
             }
         });
     }
