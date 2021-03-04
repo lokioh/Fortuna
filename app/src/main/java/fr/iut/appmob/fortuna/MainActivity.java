@@ -25,3 +25,6 @@ public class MainActivity extends AppCompatActivity {
         }, SPLASH_SCREEN_TIMEOUT);
     }
 }
+
+
+//test vincent
