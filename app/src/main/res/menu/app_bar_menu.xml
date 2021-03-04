@@ -6,7 +6,7 @@
         android:id="@+id/menuHome"
         android:icon="@drawable/ic_home"
         android:title="@string/Home"
-        app:cnb_backgroundColor="#00FFFFFF"
+        app:cnb_backgroundColor="#004C5F"
         app:cnb_iconColor="#9B9B9B"
         app:cnb_textColor="#9B9B9B"/>
 
@@ -14,7 +14,7 @@
         android:id="@+id/menuStat"
         android:icon="@drawable/ic_stats"
         android:title="@string/Stats"
-        app:cnb_backgroundColor="#00FFFFFF"
+        app:cnb_backgroundColor="#004C5F"
         app:cnb_iconColor="#9B9B9B"
         app:cnb_textColor="#9B9B9B"/>
 
@@ -22,7 +22,7 @@
         android:id="@+id/menuSettings"
         android:icon="@drawable/ic_setting"
         android:title="@string/Settings"
-        app:cnb_backgroundColor="#00FFFFFF"
+        app:cnb_backgroundColor="#004C5F"
         app:cnb_iconColor="#9B9B9B"
         app:cnb_textColor="#9B9B9B"/>
 
