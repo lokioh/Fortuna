@@ -1,20 +1,28 @@
 package fr.iut.appmob.fortuna;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 public class Dashboard extends AppCompatActivity {
 
+    private static final String TAG = MainActivity.class.getSimpleName();
     FloatingActionButton add_btn, add_new_spending, add_new_deposit, add_new_credit_card;
     Animation btnOpen, btnClose, rotateForward, rotateBackward;
     boolean isOpen = false; // Boolean which identifify if the add btn is open or not
+
+    ChipNavigationBar bottomNav;
+    FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +39,40 @@ public class Dashboard extends AppCompatActivity {
 
         rotateForward = AnimationUtils.loadAnimation(this,R.anim.rotate_foward_anim);
         rotateBackward = AnimationUtils.loadAnimation(this,R.anim.rotate_backward_anim);
+
+        bottomNav = findViewById(R.id.bottomNav);
+
+        if (savedInstanceState == null) {
+            bottomNav.setItemSelected(R.id.menuHome, true);
+            fragmentManager = getSupportFragmentManager();
+            HomeFragment homeFragment = new HomeFragment();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container, homeFragment).commit();
+        }
+
+        bottomNav.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(int id) {
+                Fragment fragment = null;
+                switch (id) {
+                    case R.id.menuHome:
+                        fragment = new HomeFragment();
+                        break;
+                    case R.id.menuStat:
+                        fragment = new StatsFragment();
+                        break;
+                    case R.id.menuSettings:
+                        fragment = new SettingsFragment();
+                        break;
+                }
+
+                if (fragment != null) {
+                    fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+                } else {
+                    Log.e(TAG, "Error creating fragment");
+                }
+            }
+        });
 
         add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
