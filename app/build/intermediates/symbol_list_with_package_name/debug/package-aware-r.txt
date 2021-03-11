@@ -1814,6 +1814,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addButtonAddNewCreditCardPopup
 id add_btn
 id add_new_credit_card
 id add_new_deposit
@@ -1831,6 +1832,7 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id automatic
+id balanceAddNewCreditCardPopup
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -1841,6 +1843,7 @@ id bottomNav
 id bounce
 id buttonPanel
 id cache_measures
+id cancelButtonAddNewCreditCardPopup
 id cancel_action
 id cancel_button
 id cbn_item_internal_container
@@ -1906,6 +1909,8 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
+id editTextBalancePopup
+id editTextNamePopup
 id edit_query
 id elastic
 id end
@@ -2026,6 +2031,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id nameAddNewCreditCardPopup
 id navigation_header_container
 id never
 id noScroll
@@ -2154,6 +2160,7 @@ id textinput_prefix_text
 id textinput_suffix_text
 id time
 id title
+id titleAddNewCreditCardPopup
 id titleDividerNoCustom
 id title_template
 id toggle
@@ -2321,6 +2328,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout popup_add_new_credit_card
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

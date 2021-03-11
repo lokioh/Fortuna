@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Toast;
+import android.app.Activity;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
@@ -20,6 +22,7 @@ public class Dashboard extends AppCompatActivity {
     FloatingActionButton add_btn, add_new_spending, add_new_deposit, add_new_credit_card;
     Animation btnOpen, btnClose, rotateForward, rotateBackward;
     boolean isOpen = false; // Boolean which identifify if the add btn is open or not
+    private Dashboard activity;
 
     ChipNavigationBar bottomNav;
     FragmentManager fragmentManager;
@@ -28,11 +31,12 @@ public class Dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        this.activity = this;
 
         add_btn = (FloatingActionButton) findViewById(R.id.add_btn);
-        add_new_spending = (FloatingActionButton) findViewById(R.id.add_new_credit_card);
+        add_new_spending = (FloatingActionButton) findViewById(R.id.add_new_spending);
         add_new_deposit = (FloatingActionButton) findViewById(R.id.add_new_deposit);
-        add_new_credit_card = (FloatingActionButton) findViewById(R.id.add_new_spending);
+        add_new_credit_card = (FloatingActionButton) findViewById(R.id.add_new_credit_card);
 
         btnOpen = AnimationUtils.loadAnimation(this,R.anim.open_anim);
         btnClose = AnimationUtils.loadAnimation(this,R.anim.close_anim);
@@ -86,14 +90,7 @@ public class Dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 animateBtn();
                 Toast.makeText(Dashboard.this, "Add new deposit clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
 
-        add_new_spending.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                animateBtn();
-                Toast.makeText(Dashboard.this, "Add new credit card clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -101,7 +98,21 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 animateBtn();
+                Toast.makeText(Dashboard.this, "Add new credit card clicked", Toast.LENGTH_SHORT).show();
+                PopupAddNewCreditCard popupAddNewCreditCard = new PopupAddNewCreditCard(activity);
+                popupAddNewCreditCard.build();
+
+            }
+        });
+
+        add_new_spending.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                animateBtn();
                 Toast.makeText(Dashboard.this, "Add new spending clicked", Toast.LENGTH_SHORT).show();
+
+
+
             }
         });
     }

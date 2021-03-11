@@ -1,4 +1,4 @@
-#Thu Mar 11 10:01:51 CET 2021
+#Thu Mar 11 12:24:05 CET 2021
 base.0=D\:\\DUT 2A\\S4\\PERIODE C\\APPMOB\\Fortuna\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
