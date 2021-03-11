@@ -1,16 +1,18 @@
 fr/iut/appmob/fortuna/HomeFragment.java
  fr.iut.appmob.fortuna.HomeFragment
-fr/iut/appmob/fortuna/SettingsFragment.java
- fr.iut.appmob.fortuna.SettingsFragment
 fr/iut/appmob/fortuna/BuildConfig.java
  fr.iut.appmob.fortuna.BuildConfig
-fr/iut/appmob/fortuna/StatsFragment.java
- fr.iut.appmob.fortuna.StatsFragment
+fr/iut/appmob/fortuna/SettingsFragment.java
+ fr.iut.appmob.fortuna.SettingsFragment
+fr/iut/appmob/fortuna/PopupAddNewCreditCard.java
+ fr.iut.appmob.fortuna.PopupAddNewCreditCard
 fr/iut/appmob/fortuna/MainActivity.java
  fr.iut.appmob.fortuna.MainActivity
  fr.iut.appmob.fortuna.MainActivity$1
-fr/iut/appmob/fortuna/PopupAddNewCreditCard.java
- fr.iut.appmob.fortuna.PopupAddNewCreditCard
+fr/iut/appmob/fortuna/StatsFragment.java
+ fr.iut.appmob.fortuna.StatsFragment
+fr/iut/appmob/fortuna/PopupAddNewDeposit.java
+ fr.iut.appmob.fortuna.PopupAddNewDeposit
 fr/iut/appmob/fortuna/Dashboard.java
  fr.iut.appmob.fortuna.Dashboard
  fr.iut.appmob.fortuna.Dashboard$1

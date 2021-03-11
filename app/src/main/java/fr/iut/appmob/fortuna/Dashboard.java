@@ -90,6 +90,8 @@ public class Dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 animateBtn();
                 Toast.makeText(Dashboard.this, "Add new deposit clicked", Toast.LENGTH_SHORT).show();
+                PopupAddNewDeposit popupAddNewDeposit = new PopupAddNewDeposit(activity);
+                popupAddNewDeposit.build();
 
             }
         });
