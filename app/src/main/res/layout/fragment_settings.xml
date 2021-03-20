@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/Settings" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="390dp"
+        android:layout_height="275dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="20dp"
+        android:background="#DDAADD">
+
+        <!-- Marwan Mezroui -->
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="110dp"
+            android:layout_marginTop="55dp"
+            android:text="Marwan Mezroui"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <!-- developer -->
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="-220dp"
+            android:layout_marginTop="90dp"
+            android:text="Developer"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <!-- image user -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginEnd="135dp"
+        android:layout_marginTop="100dp"
+        android:clickable="true"
+        android:src="@drawable/user" />
+
+    <!-- text expense schedule -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="375dp"
+        android:textSize="20dp"
+        android:text="Expense Schedule"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <!-- button add new expense schedule -->
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="455dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_add" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginTop="465dp"
+        android:layout_marginStart="80dp"
+        android:text="Add a new expense schedule" />
+
+</RelativeLayout>
+
