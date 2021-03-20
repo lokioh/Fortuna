@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:gravity="center"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/titleAddNewSpendingPopup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add spending"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:id="@+id/valueAddNewSpendingPopup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Value :"
+        android:textSize="18dp"
+        android:layout_gravity="start"/>
+
+    <EditText
+        android:id="@+id/editTextValueAddNewSpendingPopup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/categorieAddNewSpendingPopup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categorie :"
+        android:textSize="18dp"
+        android:layout_gravity="start"/>
+
+
+    <EditText
+        android:id="@+id/editTextCategoriAddNewSpendingPopup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/cancelButtonAddNewSpendingPopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:backgroundTint="#FF0000"
+            android:layout_marginRight="23dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/addButtonAddNewSpendingPopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:backgroundTint="#00CD15"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginBottom="23dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,7 +1,7 @@
-#Thu Mar 11 13:00:04 CET 2021
-base.0=D\:\\DUT 2A\\S4\\PERIODE C\\APPMOB\\Fortuna\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+#Sat Mar 20 05:05:04 GMT+01:00 2021
+base.0=C\:\\cygwin\\home\\academic\\S4\\app-mobile\\Fortuna\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=D\:\\DUT 2A\\S4\\PERIODE C\\APPMOB\\Fortuna\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex
+base.1=C\:\\cygwin\\home\\academic\\S4\\app-mobile\\Fortuna\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\classes.dex

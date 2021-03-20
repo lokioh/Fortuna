@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="23"
+        android:minSdkVersion="29"
         android:targetSdkVersion="30" />
 
     <application
@@ -19,7 +19,6 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Fortuna" >
-        <activity android:name="fr.iut.appmob.fortuna.Dashboard" />
         <activity android:name="fr.iut.appmob.fortuna.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +26,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
