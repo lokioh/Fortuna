@@ -1,14 +1,303 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".HomeFragment"
+    android:layout_marginTop="-45dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<!--
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/Home" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="32dp"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:boxStrokeErrorColor="@color/black"
+        app:counterOverflowTextColor="@color/black"
+        app:counterTextColor="@color/black"
+        app:errorTextColor="@color/black"
+        app:helperTextTextColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:placeholderTextColor="@color/white"
+        app:prefixTextColor="@color/black"
+        app:suffixTextColor="@color/black">
 
-</FrameLayout>
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextViewMonth"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text="January"
+            android:textColor="#000000" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+-->
+
+    <!-- All Layout-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- Balance Layout -->
+        <RelativeLayout
+        android:layout_width="390dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/Sandy_Brown">
+
+        </RelativeLayout>
+
+        <!-- Text Balance-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="80dp"
+            android:textStyle="bold"
+            android:textSize="40dp"
+            android:textColor="@color/white"
+            android:text="Balance" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="130dp"
+            android:textStyle="bold"
+            android:textSize="50dp"
+            android:textColor="@color/white"
+            android:text="$1852" />
+
+        <!-- Income Layout -->
+        <RelativeLayout
+            android:layout_width="390dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginEnd="230dp"
+            android:background="@color/Heliotrope">
+        </RelativeLayout>
+
+        <!-- Text Income-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="230dp"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:text="Income" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="260dp"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:text="$4200" />
+
+        <!-- Expense Layout-->
+        <RelativeLayout
+            android:layout_width="390dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="230dp"
+            android:layout_marginTop="220dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/Salmon">
+        </RelativeLayout>
+
+        <!-- Text Expense-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="230dp"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:text="Expense" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="250dp"
+            android:layout_marginTop="260dp"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="@color/white"
+            android:text="-2308$" />
+
+    </RelativeLayout>
+
+    <!-- Bottom area -->
+    <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+        android:layout_marginTop="-20dp"
+        android:layout_marginStart="-15dp">
+
+
+    <!-- Text Today line-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="175dp"
+            android:layout_marginTop="350dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="Today" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="350dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="-$215" />
+
+        <!-- Text food line-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="380dp"
+            android:textSize="30dp"
+            android:text="🍔" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="390dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="Food" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="390dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="-$15" />
+
+        <!-- Text phone line-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="430dp"
+            android:textSize="30dp"
+            android:text="📱" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="440dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="Advice" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="440dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="-$200" />
+
+        <!-- Text Feb 21 line-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="175dp"
+            android:layout_marginTop="490dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="Feb 21" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="490dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="-$75" />
+
+        <!-- Text Sport line-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="520dp"
+            android:textSize="30dp"
+            android:text="⚽" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="530dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="Sport" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="530dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="-$25" />
+
+        <!-- Text Gift line-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="570dp"
+            android:textSize="30dp"
+            android:text="🎁" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="580dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="Gift" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="320dp"
+            android:layout_marginTop="580dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:text="-$50" />
+    </RelativeLayout>
+
+</RelativeLayout>
