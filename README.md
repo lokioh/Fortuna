@@ -21,7 +21,7 @@ to instal the project:
   for this, it is necessary:
     - opend a cmd window
     - create a folder
-    - make the order "git clone <distant repository's url>
+    - make the order "git clone <distant repository's url>"
 
 
 we have been able to test this code on the following machines:
