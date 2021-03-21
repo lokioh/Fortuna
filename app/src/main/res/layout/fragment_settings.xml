@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsFragment">
+    tools:context=".views.SettingsFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <!-- LAYOUT -->
+    <!-- USER DATA SECTION -->
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <!--Purple Layout -->
+        <!-- background -->
         <RelativeLayout
             android:layout_width="390dp"
             android:layout_height="275dp"
@@ -24,7 +24,7 @@
 
         </RelativeLayout>
 
-        <!-- text Nom -->
+        <!-- user's name -->
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
             android:textColor="@color/white"
             android:textStyle="bold"/>
 
-        <!-- image user -->
+        <!-- user's icon -->
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="150dp"
@@ -49,11 +49,12 @@
 
     </RelativeLayout>
 
-    <!-- EXPENSE SCHEDULE BLOCK -->
+    <!-- EXPENSE SCHEDULE SECTION -->
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <!-- text expense schedule -->
+
+        <!-- title -->
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
@@ -74,6 +75,7 @@
             android:layout_marginStart="20dp"
             android:src="@drawable/ic_add" />
 
+        <!-- button's description -->
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
