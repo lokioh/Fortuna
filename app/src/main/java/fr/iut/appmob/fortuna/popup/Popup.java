@@ -1,4 +1,4 @@
-package fr.iut.appmob.fortuna;
+package fr.iut.appmob.fortuna.popup;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import fr.iut.appmob.fortuna.R;
 
 public class Popup extends Dialog {
     private String[] texts;
@@ -21,17 +23,18 @@ public class Popup extends Dialog {
 
     }
 
-    public void setButtons(Button[] buttons) {this.buttons = buttons;}
+    public void setButtons(Button[] buttons) { this.buttons = buttons; }
+
     public void setEditTexts(EditText[] editTexts) {this.editTexts = editTexts;}
     public void setTextViews(TextView[] textViews) {this.textViews = textViews;}
 
-    public Button getCancelButton() {return buttons[0];}
-    public Button getAddButton() {return buttons[1];}
+    public EditText getEditText(int idx) {
+        if (idx < 0) return null;
+        if (idx > 1) return null;
+        return editTexts[idx];
+    }
 
-
-    public EditText getEditTextName() {return editTexts[0];}
-    public EditText getEditTextBalance() {return editTexts[0];}
-
+    // build the dialog box and put in place the listeners
     public void build() {
         show();
         for (int i = 0; i < textViews.length; ++i)
@@ -52,10 +55,12 @@ public class Popup extends Dialog {
         });
     }
 
+    // cancel the action
     public void cancel() {
         super.cancel();
     };
 
+    // confirm the action, need to be implemented
     public void validate() {
         return;
     }
