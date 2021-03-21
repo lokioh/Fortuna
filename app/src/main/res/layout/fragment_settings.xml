@@ -16,36 +16,37 @@
         <!-- background -->
         <RelativeLayout
             android:layout_width="390dp"
-            android:layout_height="275dp"
+            android:layout_height="250dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="75dp"
+            android:layout_marginTop="55dp"
             android:layout_marginEnd="20dp"
-            android:background="@color/magenta">
+            android:background="@drawable/user_card">
+
+            <!-- user's icon -->
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35dp"
+                android:clickable="true"
+                android:src="@drawable/user" />
+
+            <!-- user's name -->
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="195dp"
+                android:textSize="20dp"
+                android:text="Marwan Mezroui"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
 
         </RelativeLayout>
 
-        <!-- user's name -->
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="130dp"
-            android:layout_marginTop="275dp"
-            android:textSize="20dp"
-            android:text="Marwan Mezroui"
-            android:textColor="@color/white"
-            android:textStyle="bold"/>
 
-        <!-- user's icon -->
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginStart="135dp"
-            android:layout_marginEnd="135dp"
-            android:layout_marginTop="100dp"
-            android:clickable="true"
-            android:src="@drawable/user" />
 
     </RelativeLayout>
 
