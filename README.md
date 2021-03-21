@@ -18,7 +18,7 @@ to instal the project:
 
   you need to clone the project
   
-  for this, it is necessary :
+  for this, it is necessary:
     - opend a cmd window
     - create a folder
     - make the order "git clone <distant repository's url>
