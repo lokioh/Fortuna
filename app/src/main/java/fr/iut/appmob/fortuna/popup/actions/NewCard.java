@@ -1,10 +1,14 @@
-package fr.iut.appmob.fortuna;
+package fr.iut.appmob.fortuna.popup.actions;
 
 import android.app.Activity;
+import android.text.Editable;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import fr.iut.appmob.fortuna.R;
+import fr.iut.appmob.fortuna.popup.Popup;
 
 public class NewCard extends Popup {
 
@@ -17,8 +21,8 @@ public class NewCard extends Popup {
         setContentView(R.layout.popup_newcard);
 
         super.setButtons(new Button[] {
-             findViewById(R.id.cancelButtonAddNewCreditCardPopup),
-             findViewById(R.id.addButtonAddNewCreditCardPopup)
+                findViewById(R.id.cancelButtonAddNewCreditCardPopup),
+                findViewById(R.id.addButtonAddNewCreditCardPopup)
         });
 
         super.setEditTexts(new EditText[] {
@@ -35,7 +39,21 @@ public class NewCard extends Popup {
 
     @Override
     public void validate() {
-        Log.i("NewCard", "Adding a new card");
+        Editable name = super.getEditText(0).getText();
+        Editable balance;
+        if(name.toString().equals("")) {
+            super.getEditText(0).setError("Error : can't be empty !");
+        } else {
+            balance = super.getEditText(1).getText();
+            if(balance.toString().equals("")) {
+                super.getEditText(1).setError("Error : can't be empty !");
+            } else {
+                Log.i("NewCard", "cardname : " + name + ", " + " balance :" + balance );
+                this.dismiss();
+            }
+        }
+
+
     }
 
 }
