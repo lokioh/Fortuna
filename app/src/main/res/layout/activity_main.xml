@@ -7,27 +7,33 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
+
+
     <!-- BOTTOM NAVBAR SECTION -->
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteY="0dp"
+        >
 
         <com.ismaeldivita.chipnavigation.ChipNavigationBar
             android:id="@+id/bottomNav"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_alignParentBottom="true"
-            android:elevation="18dp"
+            android:elevation="50dp"
             android:padding="8dp"
             app:cnb_menuResource="@menu/navbar"
-            app:cnb_unselectedColor="@color/gray" />
+            app:cnb_unselectedColor="@color/gray"
+            android:background="@drawable/navbar_shape"
+            android:backgroundTint="@color/white"/>
 
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            />
 
     </RelativeLayout>
 
