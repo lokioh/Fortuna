@@ -9,255 +9,313 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <!-- text home-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="110dp"
-        android:textStyle="bold"
-        android:text="@string/Home" />
-
-    <!-- text $ home-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="110dp"
-        android:textStyle="bold"
-        android:text="-$800" />
-
-    <!-- text icon home-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="90dp"
-        android:textSize="30dp"
-        android:text="🏡" />
-
-    <!-- text phone-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="190dp"
-        android:textStyle="bold"
-        android:text="Phone" />
-
-    <!-- text $ phone-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="190dp"
-        android:textStyle="bold"
-        android:text="-$472" />
-
-    <!-- text icon phone-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="170dp"
-        android:textSize="30dp"
-        android:text="📱" />
-
-    <!-- text car-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="270dp"
-        android:textStyle="bold"
-        android:text="Car" />
-
-    <!-- text $ car-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="270dp"
-        android:textStyle="bold"
-        android:text="-$314" />
-
-    <!-- text icon car-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="250dp"
-        android:textSize="30dp"
-        android:text="🚗" />
-
-    <!-- text health-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="350dp"
-        android:textStyle="bold"
-        android:text="Health" />
-
-    <!-- text $ health-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="350dp"
-        android:textStyle="bold"
-        android:text="-$256" />
-
-    <!-- text icon health-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="330dp"
-        android:textSize="30dp"
-        android:text="🏥" />
-
-
-    <!-- text food-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="430dp"
-        android:textStyle="bold"
-        android:text="Food" />
-
-    <!-- text $ food-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="430dp"
-        android:textStyle="bold"
-        android:text="-$139" />
-
-    <!-- text icon food-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="410dp"
-        android:textSize="30dp"
-        android:text="🍔" />
-
-    <!-- text other-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="510dp"
-        android:textStyle="bold"
-        android:text="Other" />
-
-    <!-- text $ other-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="510dp"
-        android:textStyle="bold"
-        android:text="-$78" />
-
-    <!-- text icon other-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="490dp"
-        android:textSize="30dp"
-        android:text="➕" />
-
-
-    <!-- progress bar home-->
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
+    <!-- HOME-->
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:maxWidth="300dp"
-        android:minWidth="300dp"
-        android:scaleY="5.0"
-        android:layout_marginTop="140dp"
-        android:layout_marginStart="40dp"
-        android:progressTint="#FFDE6A"
-        android:progress="100"
-        />
+        android:layout_height="wrap_content">
 
-    <!-- progress bar phone-->
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:maxWidth="300dp"
-        android:minWidth="300dp"
-        android:scaleY="5.0"
-        android:layout_marginTop="220dp"
-        android:layout_marginStart="40dp"
-        android:progressTint="#86E7FF"
-        android:progress="75" />
+        <!-- progress bar home-->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="300dp"
+            android:minWidth="300dp"
+            android:scaleY="5.0"
+            android:layout_marginTop="140dp"
+            android:layout_marginStart="40dp"
+            android:progressTint="@color/Yellow"
+            android:progressBackgroundTint="@color/black"
+            android:progress="100"
+            />
 
-    <!-- progress bar car-->
-    <ProgressBar
-        android:id="@+id/progressBar3"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:maxWidth="300dp"
-        android:minWidth="300dp"
-        android:scaleY="5.0"
-        android:layout_marginTop="300dp"
-        android:layout_marginStart="40dp"
-        android:progressTint="#FC7EFF"
-        android:progress="50" />
+        <!-- text home-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="110dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/Home" />
 
-    <!-- progress bar health-->
-    <ProgressBar
-        android:id="@+id/progressBar5"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:maxWidth="300dp"
-        android:minWidth="300dp"
-        android:scaleY="5.0"
-        android:layout_marginTop="380dp"
-        android:layout_marginStart="40dp"
-        android:progressTint="#FF5252"
-        android:progress="35"
-        />
+        <!-- text $ home-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="110dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="-$800" />
 
-    <!-- progress bar food-->
-    <ProgressBar
-        android:id="@+id/progressBar6"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:maxWidth="300dp"
-        android:minWidth="300dp"
-        android:scaleY="5.0"
-        android:layout_marginTop="460dp"
-        android:layout_marginStart="40dp"
-        android:progressTint="#7FFF6A"
-        android:progress="25"/>
+        <!-- text icon home-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="90dp"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:text="🏡" />
+    </RelativeLayout>
 
-    <!-- progress bar other-->
-    <ProgressBar
-        android:id="@+id/progressBar7"
-        style="?android:attr/progressBarStyleHorizontal"
+    <!-- PHONE -->
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:maxWidth="300dp"
-        android:minWidth="300dp"
-        android:scaleY="5.0"
-        android:layout_marginTop="540dp"
-        android:layout_marginStart="40dp"
-        android:progressTint="#FF6B00"
-        android:progress="15" />
+        android:layout_height="wrap_content">
+
+        <!-- progress bar phone-->
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="300dp"
+            android:minWidth="300dp"
+            android:scaleY="5.0"
+            android:layout_marginTop="220dp"
+            android:layout_marginStart="40dp"
+            android:progressTint="@color/Light_Blue"
+            android:progressBackgroundTint="@color/black"
+            android:progress="75" />
+        <!-- text phone-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="190dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="Phone" />
+
+        <!-- text $ phone-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="190dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="-$472" />
+
+        <!-- text icon phone-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="170dp"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:text="📱" />
+
+    </RelativeLayout>
+
+    <!-- CAR -->
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <!-- progress bar car-->
+        <ProgressBar
+            android:id="@+id/progressBar3"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="300dp"
+            android:minWidth="300dp"
+            android:scaleY="5.0"
+            android:layout_marginTop="300dp"
+            android:layout_marginStart="40dp"
+            android:progressTint="@color/Heliotrope"
+            android:progressBackgroundTint="@color/black"
+            android:progress="50" />
+        <!-- text car-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="270dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="Car" />
+
+        <!-- text $ car-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="270dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="-$314" />
+
+        <!-- text icon car-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="250dp"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:text="🚗" />
+
+    </RelativeLayout>
+
+    <!--HEALTH -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- progress bar health-->
+        <ProgressBar
+            android:id="@+id/progressBar5"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="300dp"
+            android:minWidth="300dp"
+            android:scaleY="5.0"
+            android:textColor="@color/black"
+            android:layout_marginTop="380dp"
+            android:layout_marginStart="40dp"
+            android:progressTint="@color/Red"
+            android:progressBackgroundTint="@color/black"
+            android:progress="35"
+            />
+
+        <!-- text health-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="350dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="Health" />
+
+        <!-- text $ health-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="350dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="-$256" />
+
+        <!-- text icon health-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="330dp"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:text="🏥" />
+
+    </RelativeLayout>
+
+    <!-- FOOD -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- progress bar food-->
+        <ProgressBar
+            android:id="@+id/progressBar6"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="300dp"
+            android:minWidth="300dp"
+            android:scaleY="5.0"
+            android:layout_marginTop="460dp"
+            android:layout_marginStart="40dp"
+            android:progressTint="@color/Green"
+            android:progressBackgroundTint="@color/black"
+            android:progress="25"/>
+        <!-- text food-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="430dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="Food" />
+
+        <!-- text $ food-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="430dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="-$139" />
+
+        <!-- text icon food-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="410dp"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:text="🍔" />
+    </RelativeLayout>
+
+    <!-- OTHER -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <!-- progress bar other-->
+        <ProgressBar
+            android:id="@+id/progressBar7"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="300dp"
+            android:minWidth="300dp"
+            android:scaleY="5.0"
+            android:layout_marginTop="540dp"
+            android:layout_marginStart="40dp"
+            android:progressTint="@color/Sandy_Brown"
+            android:progressBackgroundTint="@color/black"
+            android:progress="15" />
+
+        <!-- text other-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="510dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Other" />
+
+        <!-- text $ other-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="510dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="-$78" />
+
+        <!-- text icon other-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="490dp"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:text="➕" />
+    </RelativeLayout>
 
 </RelativeLayout>
 
