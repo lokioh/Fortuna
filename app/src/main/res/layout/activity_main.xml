@@ -5,77 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".Dashboard">
+    tools:context=".MainActivity">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="26dp"
-        android:layout_marginBottom="90dp"
-        android:clickable="true"
-        app:backgroundTint="#004C5F"
-        app:fabCustomSize="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_add"
-        app:maxImageSize="45dp"
-        app:tint="@color/white" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_new_credit_card"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:tint="@null"
-        app:elevation="0dp"
-        app:borderWidth="0dp"
-        app:fabCustomSize="70dp"
-        app:pressedTranslationZ="0dp"
-        app:maxImageSize="45dp"
-        app:backgroundTint="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/add_btn"
-        app:layout_constraintEnd_toEndOf="@+id/add_btn"
-        app:srcCompat="@drawable/ic_add_credit_card" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_new_deposit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:backgroundTint="#00FFFFFF"
-        app:elevation="0dp"
-        app:borderWidth="0dp"
-        app:fabCustomSize="70dp"
-        app:maxImageSize="45dp"
-        app:pressedTranslationZ="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/add_new_credit_card"
-        app:layout_constraintEnd_toEndOf="@+id/add_new_credit_card"
-        app:srcCompat="@drawable/ic_piggy_bank"
-        app:tint="@null" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_new_spending"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:backgroundTint="#00FFFFFF"
-        app:borderWidth="0dp"
-        app:elevation="0dp"
-        app:fabCustomSize="70dp"
-        app:layout_constraintBottom_toTopOf="@+id/add_new_deposit"
-        app:layout_constraintEnd_toEndOf="@+id/add_new_deposit"
-        app:maxImageSize="45dp"
-        app:pressedTranslationZ="0dp"
-        app:srcCompat="@drawable/ic_spending"
-        app:tint="@null" />
-
+    <!-- BOTTOM NAVBAR SECTION -->
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -98,5 +30,82 @@
             android:layout_height="match_parent"/>
 
     </RelativeLayout>
+
+
+    <!--  ACTION BUTTON SECTION -->
+    <!-- the button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="90dp"
+        android:clickable="true"
+        app:backgroundTint="#004C5F"
+        app:fabCustomSize="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add"
+        app:maxImageSize="45dp"
+        app:tint="@color/white" />
+
+    <!-- actions :  -->
+
+    <!-- new card action -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_new_credit_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:tint="@null"
+        app:elevation="0dp"
+        app:borderWidth="0dp"
+        app:fabCustomSize="70dp"
+        app:pressedTranslationZ="0dp"
+        app:maxImageSize="45dp"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/add_btn"
+        app:layout_constraintEnd_toEndOf="@+id/add_btn"
+        app:srcCompat="@drawable/ic_new_card" />
+
+    <!-- new deposit action -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_new_deposit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:backgroundTint="#00FFFFFF"
+        app:elevation="0dp"
+        app:borderWidth="0dp"
+        app:fabCustomSize="70dp"
+        app:maxImageSize="45dp"
+        app:pressedTranslationZ="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/add_new_credit_card"
+        app:layout_constraintEnd_toEndOf="@+id/add_new_credit_card"
+        app:srcCompat="@drawable/ic_new_deposit"
+        app:tint="@null" />
+
+    <!-- new spending action -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_new_spending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:backgroundTint="#00FFFFFF"
+        app:borderWidth="0dp"
+        app:elevation="0dp"
+        app:fabCustomSize="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/add_new_deposit"
+        app:layout_constraintEnd_toEndOf="@+id/add_new_deposit"
+        app:maxImageSize="45dp"
+        app:pressedTranslationZ="0dp"
+        app:srcCompat="@drawable/ic_new_spending"
+        app:tint="@null" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
