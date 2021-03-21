@@ -7,6 +7,8 @@
     android:paddingLeft="30dp"
     android:paddingRight="30dp">
 
+    <!-- HEADER -->
+    <!-- title -->
     <TextView
         android:id="@+id/titleAddNewCreditCardPopup"
         android:layout_width="wrap_content"
@@ -17,6 +19,8 @@
         android:textSize="25dp"
         android:textStyle="bold" />
 
+    <!-- BODY -->
+    <!-- name section -->
     <TextView
         android:id="@+id/nameAddNewCreditCardPopup"
         android:layout_width="wrap_content"
@@ -33,6 +37,7 @@
         android:ems="10"
         android:inputType="textPersonName" />
 
+    <!-- balance section -->
     <TextView
         android:id="@+id/balanceAddNewCreditCardPopup"
         android:layout_width="wrap_content"
@@ -49,11 +54,13 @@
         android:ems="10"
         android:inputType="number" />
 
+    <!-- FOOTER -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <!-- cancel button -->
         <Button
             android:id="@+id/cancelButtonAddNewCreditCardPopup"
             android:layout_width="wrap_content"
@@ -61,9 +68,10 @@
             android:layout_marginTop="23dp"
             android:layout_marginRight="23dp"
             android:layout_marginBottom="20dp"
-            android:backgroundTint="#FF0000"
+            android:backgroundTint="@color/red"
             android:text="Cancel" />
 
+        <!-- confirm button -->
         <Button
             android:id="@+id/addButtonAddNewCreditCardPopup"
             android:layout_width="wrap_content"
@@ -71,7 +79,7 @@
             android:layout_marginLeft="23dp"
             android:layout_marginTop="23dp"
             android:layout_marginBottom="23dp"
-            android:backgroundTint="#00CD15"
+            android:backgroundTint="@color/green"
             android:text="Add" />
 
     </LinearLayout>

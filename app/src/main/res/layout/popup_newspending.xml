@@ -6,6 +6,8 @@
     android:paddingRight="30dp"
     android:layout_height="match_parent">
 
+    <!-- HEADER -->
+    <!-- title -->
     <TextView
         android:id="@+id/titleAddNewSpendingPopup"
         android:layout_width="wrap_content"
@@ -16,6 +18,8 @@
         android:textColor="@color/black"
         android:layout_marginBottom="30dp"/>
 
+    <!-- BODY -->
+    <!-- name section -->
     <TextView
         android:id="@+id/valueAddNewSpendingPopup"
         android:layout_width="wrap_content"
@@ -32,43 +36,47 @@
         android:inputType="textPersonName"
         android:layout_marginBottom="20dp"/>
 
+    <!-- category section -->
     <TextView
-        android:id="@+id/categorieAddNewSpendingPopup"
+        android:id="@+id/categoryAddNewSpendingPopup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Categorie :"
+        android:text="Category :"
         android:textSize="18dp"
         android:layout_gravity="start"/>
 
 
     <EditText
-        android:id="@+id/editTextCategoriAddNewSpendingPopup"
+        android:id="@+id/editTextCategoryAddNewSpendingPopup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="number"/>
+        android:inputType="text"/>
 
+    <!-- FOOTER -->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
+        <!-- cancel button -->
         <Button
             android:id="@+id/cancelButtonAddNewSpendingPopup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancel"
-            android:backgroundTint="#FF0000"
+            android:backgroundTint="@color/red"
             android:layout_marginRight="23dp"
             android:layout_marginTop="23dp"
             android:layout_marginBottom="20dp"/>
 
+        <!-- confirm button -->
         <Button
             android:id="@+id/addButtonAddNewSpendingPopup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add"
-            android:backgroundTint="#00CD15"
+            android:backgroundTint="@color/green"
             android:layout_marginLeft="23dp"
             android:layout_marginTop="23dp"
             android:layout_marginBottom="23dp"/>
