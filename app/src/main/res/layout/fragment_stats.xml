@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StatsFragment"
+    tools:context=".views.StatsFragment"
     android:layout_marginTop="-30dp">
 
 
@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <!-- progress bar home-->
+        <!-- progress bar -->
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
@@ -30,7 +30,7 @@
             android:progress="100"
             />
 
-        <!-- text home-->
+        <!-- title -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -40,7 +40,7 @@
             android:textColor="@color/black"
             android:text="@string/Home" />
 
-        <!-- text $ home-->
+        <!-- value -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -50,7 +50,7 @@
             android:textColor="@color/black"
             android:text="-$800" />
 
-        <!-- text icon home-->
+        <!-- icon -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -59,6 +59,7 @@
             android:textColor="@color/black"
             android:textSize="30dp"
             android:text="🏡" />
+
     </RelativeLayout>
 
     <!-- PHONE -->
@@ -66,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <!-- progress bar phone-->
+        <!-- progress bar -->
         <ProgressBar
             android:id="@+id/progressBar2"
             style="?android:attr/progressBarStyleHorizontal"
@@ -80,7 +81,8 @@
             android:progressTint="@color/Light_Blue"
             android:progressBackgroundTint="@color/black"
             android:progress="75" />
-        <!-- text phone-->
+
+        <!-- title-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -90,7 +92,7 @@
             android:textStyle="bold"
             android:text="Phone" />
 
-        <!-- text $ phone-->
+        <!-- value -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -100,7 +102,7 @@
             android:textColor="@color/black"
             android:text="-$472" />
 
-        <!-- text icon phone-->
+        <!-- icon -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -116,7 +118,8 @@
     <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-        <!-- progress bar car-->
+
+        <!-- progress bar -->
         <ProgressBar
             android:id="@+id/progressBar3"
             style="?android:attr/progressBarStyleHorizontal"
@@ -130,7 +133,8 @@
             android:progressTint="@color/Heliotrope"
             android:progressBackgroundTint="@color/black"
             android:progress="50" />
-        <!-- text car-->
+
+        <!-- title -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -140,7 +144,7 @@
             android:textStyle="bold"
             android:text="Car" />
 
-        <!-- text $ car-->
+        <!-- value -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -150,7 +154,7 @@
             android:textColor="@color/black"
             android:text="-$314" />
 
-        <!-- text icon car-->
+        <!-- icon -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -167,7 +171,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <!-- progress bar health-->
+        <!-- progress bar -->
         <ProgressBar
             android:id="@+id/progressBar5"
             style="?android:attr/progressBarStyleHorizontal"
@@ -184,7 +188,7 @@
             android:progress="35"
             />
 
-        <!-- text health-->
+        <!-- title -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -194,7 +198,7 @@
             android:textStyle="bold"
             android:text="Health" />
 
-        <!-- text $ health-->
+        <!-- value -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -204,7 +208,7 @@
             android:textStyle="bold"
             android:text="-$256" />
 
-        <!-- text icon health-->
+        <!-- icon -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -221,7 +225,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <!-- progress bar food-->
+        <!-- progress bar -->
         <ProgressBar
             android:id="@+id/progressBar6"
             style="?android:attr/progressBarStyleHorizontal"
@@ -235,7 +239,8 @@
             android:progressTint="@color/Green"
             android:progressBackgroundTint="@color/black"
             android:progress="25"/>
-        <!-- text food-->
+
+        <!-- title -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -245,7 +250,7 @@
             android:textStyle="bold"
             android:text="Food" />
 
-        <!-- text $ food-->
+        <!-- value -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -255,7 +260,7 @@
             android:textColor="@color/black"
             android:text="-$139" />
 
-        <!-- text icon food-->
+        <!-- icon -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -264,6 +269,7 @@
             android:textColor="@color/black"
             android:textSize="30dp"
             android:text="🍔" />
+
     </RelativeLayout>
 
     <!-- OTHER -->
@@ -271,7 +277,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <!-- progress bar other-->
+        <!-- progress bar -->
         <ProgressBar
             android:id="@+id/progressBar7"
             style="?android:attr/progressBarStyleHorizontal"
@@ -286,7 +292,7 @@
             android:progressBackgroundTint="@color/black"
             android:progress="15" />
 
-        <!-- text other-->
+        <!-- title -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -296,7 +302,7 @@
             android:textColor="@color/black"
             android:text="Other" />
 
-        <!-- text $ other-->
+        <!-- value -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -306,7 +312,7 @@
             android:textStyle="bold"
             android:text="-$78" />
 
-        <!-- text icon other-->
+        <!-- icon -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -315,6 +321,7 @@
             android:textColor="@color/black"
             android:textSize="30dp"
             android:text="➕" />
+        
     </RelativeLayout>
 
 </RelativeLayout>
