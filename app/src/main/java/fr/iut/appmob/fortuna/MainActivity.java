@@ -8,10 +8,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
+
+import fr.iut.appmob.fortuna.popup.actions.NewCard;
+import fr.iut.appmob.fortuna.popup.actions.NewDeposit;
+import fr.iut.appmob.fortuna.popup.actions.NewSpending;
+import fr.iut.appmob.fortuna.views.HomeFragment;
+import fr.iut.appmob.fortuna.views.SettingsFragment;
+import fr.iut.appmob.fortuna.views.StatsFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,12 +37,15 @@ public class MainActivity extends AppCompatActivity {
         new Loading(this).startLoading();
         setContentView(R.layout.activity_main);
 
+        // init our differents elements
         this.navbar = findViewById(R.id.bottomNav);
         this.manager = getSupportFragmentManager();
+
         this.setButtons();
         this.setAnimations();
         this.setListener();
 
+        // default selected item in the navbar
         this.navbar.setItemSelected(R.id.menuHome, true);
 
     }
@@ -127,10 +136,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // animate the buttons according to the state of
+    // the action button open or close
     private void animateBtn () {
         if (isOpen) {
             try {
-                this.addBtnAnimation(1);
+                this.launchAnimation(1);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -138,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
             isOpen = false;
         } else {
             try {
-                this.addBtnAnimation(0);
+                this.launchAnimation(0);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -148,7 +159,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void addBtnAnimation(int animation) throws Exception {
+    // launch the adequate animation according to the int
+    // given. 0 : opening animation | 1 : closing animation
+    private void launchAnimation(int animation) throws Exception {
         Animation[] animations = new Animation[2];
         if (animation == 0) animations = openingAnimations;
         if (animation == 1) animations = closingAnimations;
@@ -164,12 +177,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // update state of the buttons in the action button
     private void setButtonClickable(boolean clickable) {
         for (int i = 1; i < buttons.length; ++i)
             buttons[i].setClickable(clickable);
 
     }
 
+    // Change the view according to the selected item
+    // on the bottom navbar
     private void setFragment(Fragment fragment) {
         this.manager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
     }
