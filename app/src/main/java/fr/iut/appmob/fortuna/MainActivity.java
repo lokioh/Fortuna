@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -12,7 +15,7 @@ import android.view.animation.AnimationUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
-import fr.iut.appmob.fortuna.popup.actions.NewCard;
+import fr.iut.appmob.fortuna.config.AuthenticationActivity;
 import fr.iut.appmob.fortuna.popup.actions.NewDeposit;
 import fr.iut.appmob.fortuna.popup.actions.NewSpending;
 import fr.iut.appmob.fortuna.views.HomeFragment;
@@ -22,19 +25,29 @@ import fr.iut.appmob.fortuna.views.StatsFragment;
 public class MainActivity extends AppCompatActivity {
 
     // for the action button
-    FloatingActionButton[] buttons;
-    Animation[] openingAnimations;
-    Animation[] closingAnimations;
-    boolean isOpen = false;
+    private FloatingActionButton[] buttons;
+    private Animation[] openingAnimations;
+    private Animation[] closingAnimations;
+    private boolean isOpen = false;
 
     // for the navbar
-    ChipNavigationBar navbar;
-    FragmentManager manager;
+    private ChipNavigationBar navbar;
+    private FragmentManager manager;
 
+    private static SharedPreferences CONFIG;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         new Loading(this).startLoading();
+
+        CONFIG = getSharedPreferences("CONFIG", Context.MODE_PRIVATE);
+        boolean isFirstRun = CONFIG.getBoolean("isFirstRun", true);
+
+        if (isFirstRun) {
+            openConfigActivity();
+        }
+        CONFIG.edit().putBoolean("isFirstRun", false).commit();
+
         setContentView(R.layout.activity_main);
 
         // init our differents elements
@@ -50,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void openConfigActivity(){
+        startActivity(new Intent(this, AuthenticationActivity.class));
+    }
+
     @Override
     protected void onRestart() {
         super.onRestart();
@@ -59,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
     public void setButtons() {
         buttons = new FloatingActionButton[] {
                 (FloatingActionButton) findViewById(R.id.add_btn),
-                (FloatingActionButton) findViewById(R.id.add_new_credit_card),
                 (FloatingActionButton) findViewById(R.id.add_new_deposit),
                 (FloatingActionButton) findViewById(R.id.add_new_spending)
         };
@@ -96,12 +112,9 @@ public class MainActivity extends AppCompatActivity {
                         animateBtn();
                         switch (popup) {
                             case 1:
-                                new NewCard(MainActivity.this, "Add new credit card").build();
-                                break;
-                            case 2:
                                 new NewDeposit(MainActivity.this, "Add deposit").build();
                                 break;
-                            case 3:
+                            case 2:
                                 new NewSpending(MainActivity.this, "Add spending").build();
                                 break;
                         }

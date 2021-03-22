@@ -57,24 +57,6 @@
 
     <!-- actions :  -->
 
-    <!-- new card action -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_new_credit_card"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:clickable="true"
-        android:visibility="invisible"
-        app:tint="@null"
-        app:elevation="0dp"
-        app:borderWidth="0dp"
-        app:fabCustomSize="70dp"
-        app:pressedTranslationZ="0dp"
-        app:maxImageSize="45dp"
-        app:backgroundTint="@color/action"
-        app:layout_constraintBottom_toTopOf="@+id/add_btn"
-        app:layout_constraintEnd_toEndOf="@+id/add_btn"
-        app:srcCompat="@drawable/ic_new_card" />
 
     <!-- new deposit action -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -90,8 +72,8 @@
         app:fabCustomSize="70dp"
         app:maxImageSize="45dp"
         app:pressedTranslationZ="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/add_new_credit_card"
-        app:layout_constraintEnd_toEndOf="@+id/add_new_credit_card"
+        app:layout_constraintBottom_toTopOf="@+id/add_btn"
+        app:layout_constraintEnd_toEndOf="@+id/add_btn"
         app:srcCompat="@drawable/ic_new_deposit"
         app:tint="@null" />
 
