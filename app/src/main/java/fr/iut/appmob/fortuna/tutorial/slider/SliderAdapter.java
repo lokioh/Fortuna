@@ -1,4 +1,4 @@
-package fr.iut.appmob.fortuna.HelperClasses;
+package fr.iut.appmob.fortuna.tutorial.slider;
 
 import android.content.Context;
 import android.view.LayoutInflater;
