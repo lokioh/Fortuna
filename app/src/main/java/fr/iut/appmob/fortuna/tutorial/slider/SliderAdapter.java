@@ -32,7 +32,6 @@ public class SliderAdapter extends PagerAdapter {
             R.drawable.fleche_nav_home,
             R.drawable.fleche_stat,
             R.drawable.fleche_setting,
-            R.drawable.fleche_icon_setting,
             R.drawable.fleche_schedule,
 
     };
@@ -46,7 +45,6 @@ public class SliderAdapter extends PagerAdapter {
             R.string.sixth_slide_tuto_txt,
             R.string.seventh_slide_tuto_txt,
             R.string.eighth_slide_tuto_txt,
-            R.string.ninth_slide_tuto_txt,
     };
 
 

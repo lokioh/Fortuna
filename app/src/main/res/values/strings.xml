@@ -35,8 +35,6 @@
     <string name="seventh_slide_tuto_txt">On this page you can see your profile and all the settings link to it.</string>
 
     <!-- eighth_slide_on_boarding_screen strings values -->
-    <string name="eighth_slide_tuto_txt">If you click there you can change your profile picture.</string>
+    <string name="eighth_slide_tuto_txt">If you click there you can add a planned expense.</string>
 
-    <!-- ninth_slide_on_boarding_screen strings values -->
-    <string name="ninth_slide_tuto_txt">If you click there you can add a planned expense.</string>
 </resources>
