@@ -14,18 +14,18 @@ to access the code:
   - loiclim.etu@gmail.com
 
 
-to instal the project:
+to install the project:
 
   you need to clone the project
   
   for this, it is necessary:
-    - opend a cmd window 
+    - open a cmd window
     - create a folder
     - make the order "git clone <distant repository's url>"
 
 
 we have been able to test this code on the following machines:
-  - Xiami Mi 9 T
+  - Xiaomi Mi 9 T
   - Google pixel 3
   - Google pixel 4a
 
@@ -41,4 +41,3 @@ Currently our application can :
 
 Possible improvement:
   - retrieve a history of last month's expenses
-  - 
