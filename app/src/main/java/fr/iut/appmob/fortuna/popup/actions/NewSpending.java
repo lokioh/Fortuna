@@ -9,8 +9,12 @@ import android.widget.TextView;
 
 import fr.iut.appmob.fortuna.R;
 import fr.iut.appmob.fortuna.popup.Popup;
+import fr.iut.appmob.fortuna.DataManagement;
 
 public class NewSpending extends Popup {
+
+    EditText editText_newSpending;
+
     private static final String[] CATEGORIES = {
             "Home",
             "Phone",
@@ -50,6 +54,8 @@ public class NewSpending extends Popup {
     @Override
     public void validate() {
         Editable value = super.getEditText(0).getText();
+        editText_newSpending = findViewById(R.id.editTextValueAddNewSpendingPopup);
+        String spendingValue = editText_newSpending.getText().toString();
         Editable category;
         if (value.toString().equals("")) {
             super.getEditText(0).setError("Error : can't be empty !");
@@ -62,6 +68,7 @@ public class NewSpending extends Popup {
                         "Phone or Car or Health or Food or Sport " +
                         "or Gift or Other");
             } else {
+                DataManagement.addNewExpense(getContext(), spendingValue);
                 Log.i("NewSpending", "value : " + value + ", " + "category : " + category);
                 this.dismiss();
             }

@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
     private ChipNavigationBar navbar;
     private FragmentManager manager;
 
+    FragmentManager fragmentManager;
+    HomeFragment homeFragment = new HomeFragment();
+
     private static SharedPreferences CONFIG;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         // default selected item in the navbar
         this.navbar.setItemSelected(R.id.menuHome, true);
 
+        fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().add(R.id.fragment_container, homeFragment).show(homeFragment).commit();
     }
 
     private void openConfigActivity(){

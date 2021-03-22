@@ -2,16 +2,15 @@ package fr.iut.appmob.fortuna.config;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
 
-import fr.iut.appmob.fortuna.MainActivity;
 import fr.iut.appmob.fortuna.R;
 import fr.iut.appmob.fortuna.tutorial.StartUp;
+import fr.iut.appmob.fortuna.DataManagement;
 
 public class CardActivity extends AppCompatActivity {
 
@@ -34,9 +33,7 @@ public class CardActivity extends AppCompatActivity {
                     balance = balanceGiven.toString();
                 }
 
-                getSharedPreferences("MONEY", Context.MODE_PRIVATE).edit()
-                        .putFloat("balance", Float.parseFloat(balance))
-                        .commit();
+                DataManagement.setBalance(getApplicationContext(), balance);
                 openTutorialActivity();
             }
         });

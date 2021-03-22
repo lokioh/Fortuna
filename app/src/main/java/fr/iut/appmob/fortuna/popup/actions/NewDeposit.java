@@ -9,8 +9,11 @@ import android.widget.TextView;
 
 import fr.iut.appmob.fortuna.R;
 import fr.iut.appmob.fortuna.popup.Popup;
+import fr.iut.appmob.fortuna.DataManagement;
 
 public class NewDeposit extends Popup {
+
+    EditText editText_newDeposit;
     public NewDeposit(Activity activity, String title) {
         super(activity, new String[] {
                 title,
@@ -37,10 +40,13 @@ public class NewDeposit extends Popup {
     @Override
     public void validate() {
         Editable value = super.getEditText(0).getText();
+        editText_newDeposit = findViewById(R.id.editTextValueAddNewDepositPopup);
+        String depositValue = editText_newDeposit.getText().toString();
         if (value.toString().equals("")) {
             super.getEditText(0).setError("Error : can't be empty !");
         } else {
             Log.i("NewDeposit", "value : " + value + ", " + "category : deposit" );
+            DataManagement.addNewDeposit(getContext(), depositValue);
             this.dismiss();
         }
     }

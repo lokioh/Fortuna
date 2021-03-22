@@ -2,12 +2,20 @@ package fr.iut.appmob.fortuna.popup;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import fr.iut.appmob.fortuna.MainActivity;
 import fr.iut.appmob.fortuna.R;
+import fr.iut.appmob.fortuna.views.HomeFragment;
 
 public class Popup extends Dialog {
     private String[] texts;
@@ -64,5 +72,7 @@ public class Popup extends Dialog {
     public void validate() {
         return;
     }
+
+    
 
 }

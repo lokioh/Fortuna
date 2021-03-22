@@ -1,11 +1,14 @@
 package fr.iut.appmob.fortuna.views;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +17,7 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 
 import fr.iut.appmob.fortuna.R;
+import fr.iut.appmob.fortuna.popup.Popup;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +34,10 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    TextView textView_balance;
+    TextView textView_income;
+    TextView textView_expense;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -68,18 +76,41 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        TextView balance = view.findViewById(R.id.balance);
-        TextView income = view.findViewById(R.id.income);
-        TextView expense = view.findViewById(R.id.expense);
+        textView_balance = (TextView) view.findViewById(R.id.balance);
+        textView_income = (TextView) view.findViewById(R.id.income);
+        textView_expense = (TextView) view.findViewById(R.id.expense);
+
+        setContent();
+
+        return view;
+    }
+
+    public void setContent() {
 
         SharedPreferences MONEY = this.getActivity().getSharedPreferences("MONEY", Context.MODE_PRIVATE);
 
         Float balanceValue = MONEY.getFloat("balance", 0);
+        Float incomeValue = MONEY.getFloat("deposit",0);
+        Float expenseValue = MONEY.getFloat("expense", 0);
         DecimalFormat df = new DecimalFormat("#.###");
-        balance.setText("$" + df.format(balanceValue));
-        income.setText("$0");
-        expense.setText("$0");
-        return view;
+        textView_balance.setText("$" + df.format(balanceValue));
+        textView_income.setText("$" + df.format(incomeValue));
+        textView_expense.setText("$" + df.format(expenseValue));
+
+        refresh(1000);
+    }
+
+    private void refresh(int millsec) {
+        final Handler handler = new Handler();
+
+        final Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                setContent();
+            }
+        };
+
+        handler.postDelayed(runnable, millsec);
     }
 
 }
