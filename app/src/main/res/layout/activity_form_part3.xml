@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-130dp"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/Carte" />
+        app:srcCompat="@drawable/card" />
 
     <!-- Text Add a new card -->
     <TextView
