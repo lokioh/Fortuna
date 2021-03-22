@@ -1,5 +1,7 @@
 package fr.iut.appmob.fortuna.views;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,7 +9,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import fr.iut.appmob.fortuna.MainActivity;
 import fr.iut.appmob.fortuna.R;
 
 /**
@@ -51,6 +56,7 @@ public class SettingsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -61,6 +67,19 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+        View view = inflater.inflate(R.layout.fragment_settings, container, false);
+        TextView name = (TextView) view.findViewById(R.id.userText);
+        ImageView icon = (ImageView) view.findViewById(R.id.userIcon);
+        SharedPreferences CONFIG = this.getActivity().getSharedPreferences("CONFIG", Context.MODE_PRIVATE);
+
+        String firstName = CONFIG.getString("first_name", "NONE");
+        String lastName = CONFIG.getString("last_name", "NONE");
+
+        String txt = firstName.substring(0, 1).toUpperCase() + firstName.substring(1) +
+                " " + lastName.substring(0, 1).toUpperCase() + lastName.substring(1);
+
+        name.setText(txt);
+        icon.setImageResource(CONFIG.getInt("icon", R.drawable.ic_man));
+        return view;
     }
 }

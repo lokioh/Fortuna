@@ -1,5 +1,7 @@
 package fr.iut.appmob.fortuna.views;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.text.DecimalFormat;
 
 import fr.iut.appmob.fortuna.R;
 
@@ -61,7 +66,20 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        TextView balance = view.findViewById(R.id.balance);
+        TextView income = view.findViewById(R.id.income);
+        TextView expense = view.findViewById(R.id.expense);
+
+        SharedPreferences MONEY = this.getActivity().getSharedPreferences("MONEY", Context.MODE_PRIVATE);
+
+        Float balanceValue = MONEY.getFloat("balance", 0);
+        DecimalFormat df = new DecimalFormat("#.###");
+        balance.setText("$" + df.format(balanceValue));
+        income.setText("$0");
+        expense.setText("$0");
+        return view;
     }
-    
+
 }

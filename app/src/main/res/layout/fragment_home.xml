@@ -7,39 +7,6 @@
     tools:context=".views.HomeFragment"
     android:layout_marginTop="-45dp">
 
-<!--
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="32dp"
-        android:textColorHint="@color/black"
-        app:boxStrokeColor="@color/black"
-        app:boxStrokeErrorColor="@color/black"
-        app:counterOverflowTextColor="@color/black"
-        app:counterTextColor="@color/black"
-        app:errorTextColor="@color/black"
-        app:helperTextTextColor="@color/black"
-        app:hintTextColor="@color/black"
-        app:placeholderTextColor="@color/white"
-        app:prefixTextColor="@color/black"
-        app:suffixTextColor="@color/black">
-
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextViewMonth"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:inputType="none"
-            android:text="January"
-            android:textColor="#000000" />
-
-
-    </com.google.android.material.textfield.TextInputLayout>
--->
-
     <!-- SUMMARY AREA -->
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -77,14 +44,14 @@
 
                 <!-- value -->
                 <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="50dp"
-                android:textStyle="bold"
-                android:textSize="50dp"
-                android:textColor="@color/white"
-                android:text="$1852" />
+                    android:id="@+id/balance"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="50dp"
+                    android:textStyle="bold"
+                    android:textSize="50dp"
+                    android:textColor="@color/white" />
             </RelativeLayout>
 
         </RelativeLayout>
@@ -111,25 +78,25 @@
 
                 <!-- title -->
                 <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:textStyle="bold"
-                android:textSize="25dp"
-                android:textColor="@color/white"
-                android:text="Income" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:textStyle="bold"
+                    android:textSize="25dp"
+                    android:textColor="@color/white"
+                    android:text="Income" />
 
                 <!-- value -->
                 <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="32dp"
-                android:textStyle="bold"
-                android:textSize="25dp"
-                android:textColor="@color/white"
-                android:text="$4200" />
+                    android:id="@+id/income"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="32dp"
+                    android:textStyle="bold"
+                    android:textSize="25dp"
+                    android:textColor="@color/white" />
 
             </RelativeLayout>
 
@@ -154,25 +121,26 @@
                 android:paddingTop="10dp">
                 <!-- title -->
                 <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:textStyle="bold"
-                android:textSize="25dp"
-                android:textColor="@color/white"
-                android:text="Expense" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:textStyle="bold"
+                    android:textSize="25dp"
+                    android:textColor="@color/white"
+                    android:text="Expense" />
 
                 <!-- value -->
                 <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="32dp"
-                android:textStyle="bold"
-                android:textSize="25dp"
-                android:textColor="@color/white"
-                android:text="-2308$" />
+                    android:id="@+id/expense"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="32dp"
+                    android:textStyle="bold"
+                    android:textSize="25dp"
+                    android:textColor="@color/white"
+                    />
             </RelativeLayout>
 
         </RelativeLayout>

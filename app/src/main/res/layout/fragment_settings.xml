@@ -21,26 +21,33 @@
             android:layout_marginTop="55dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/user_card">
-
-            <!-- user's icon -->
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_centerHorizontal="true"
+            <androidx.cardview.widget.CardView
+                app:cardCornerRadius="125dp"
                 android:layout_marginTop="35dp"
-                android:clickable="true"
-                android:src="@drawable/user" />
+                android:layout_centerHorizontal="true"
+                android:layout_width="150dp"
+                android:layout_height="150dp">
+                <!-- user's icon -->
+                <ImageView
+                    android:id="@+id/userIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="0dp"
+                    android:clickable="true"
+                    android:src="@drawable/user" />
+            </androidx.cardview.widget.CardView>
+
 
             <!-- user's name -->
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/userText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="195dp"
                 android:textSize="20dp"
-                android:text="Marwan Mezroui"
+                android:text=""
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
 
