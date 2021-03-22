@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Image card -->
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/card" />
+
+    <!-- Text Add a new card -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add a new card"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:textStyle="bold"
+        android:textSize="30dp"/>
+
+
+    <!-- Body -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-40dp">
+
+        <!-- balance section -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- text balance  -->
+            <TextView
+                android:id="@+id/lastNameForm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="450dp"
+                android:layout_marginStart="40dp"
+                android:textColor="@color/black"
+                android:text="Balance :"
+                android:textSize="20dp" />
+
+            <!-- Input balance  -->
+            <EditText
+                android:id="@+id/inputBalance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="480dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:ems="10"
+                android:inputType="numberDecimal" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!-- Section footer -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-30dp">
+
+        <!-- Button confirm -->
+        <Button
+            android:id="@+id/buttonConfirm"
+            android:layout_width="150dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="580dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="20dp"
+            android:text="Confirm" />
+
+        <!-- Slide part -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="680dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:text="⚪     ⚪    ⚫"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
