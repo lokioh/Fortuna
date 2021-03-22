@@ -3,4 +3,40 @@
     <string name="Settings"> Settings </string>
     <string name="Stats"> Stats </string>
     <string name="Home"> Home </string>
+
+    <!-- activity_form_part1 strings values -->
+    <string name="first_slide_title">Welcome to Fortuna</string>
+    <string name="first_slide_txtView_firstName">First Name :</string>
+    <string name="first_slide_txtView_lastName">Last Name :</string>
+    <string name="first_slide_btn">Next</string>
+
+    <!-- activity_form_part3 strings values -->
+    <string name="third_slide_title">Add a new card</string>
+
+    <!-- first_slide_on_boarding_screen strings values -->
+    <string name="first_slide_tuto_txt">Let\'s discover Fortuna together and see what it can do !</string>
+
+    <!-- second_slide_on_boarding_screen strings values -->
+    <string name="second_slide_tuto_txt">You can click on the add button to add new assets.</string>
+
+    <!-- third_slide_on_boarding_screen strings values -->
+    <string name="third_slide_tuto_txt">If you click there you can add a new income.</string>
+
+    <!-- fourth_slide_on_boarding_screen strings values -->
+    <string name="fourth_slide_tuto_txt">If you click there you can add a new expense.</string>
+
+    <!-- fifth_slide_on_boarding_screen strings values -->
+    <string name="fifth_slide_tuto_txt">On this page you can see your current balance, incomes and expenses.</string>
+
+    <!-- sixth_slide_on_boarding_screen strings values -->
+    <string name="sixth_slide_tuto_txt">On this page you can see your expenses classified in different categories.</string>
+
+    <!-- seventh_slide_on_boarding_screen strings values -->
+    <string name="seventh_slide_tuto_txt">On this page you can see your profile and all the settings link to it.</string>
+
+    <!-- eighth_slide_on_boarding_screen strings values -->
+    <string name="eighth_slide_tuto_txt">If you click there you can change your profile picture.</string>
+
+    <!-- ninth_slide_on_boarding_screen strings values -->
+    <string name="ninth_slide_tuto_txt">If you click there you can add a planned expense.</string>
 </resources>

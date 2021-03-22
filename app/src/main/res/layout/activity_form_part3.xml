@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add a new card"
+        android:text="@string/third_slide_title"
         android:textColor="@color/black"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"

@@ -22,9 +22,10 @@
 
         <!-- Text welcome -->
         <TextView
+            android:id="@+id/first_slide_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome to Fortuna"
+            android:text="@string/first_slide_title"
             android:textColor="@color/black"
             android:layout_marginStart="65dp"
             android:layout_marginTop="250dp"
@@ -47,7 +48,7 @@
             android:layout_marginTop="350dp"
             android:textColor="@color/black"
             android:layout_marginStart="40dp"
-            android:text="First Name :"
+            android:text="@string/first_slide_txtView_firstName"
             android:textSize="20dp" />
 
         <!-- Input First name  -->
@@ -75,7 +76,7 @@
             android:layout_marginTop="450dp"
             android:layout_marginStart="40dp"
             android:textColor="@color/black"
-            android:text="Last Name :"
+            android:text="@string/first_slide_txtView_lastName"
             android:textSize="20dp" />
 
         <!-- Input Last name  -->
@@ -106,7 +107,7 @@
             android:layout_marginTop="580dp"
             android:layout_centerHorizontal="true"
             android:textSize="20dp"
-            android:text="Next" />
+            android:text="@string/first_slide_btn" />
 
         <!-- Slide part -->
         <TextView
