@@ -13,14 +13,14 @@ public class Loading {
     private Handler handler;
 
     // give the activity in which the loading screen should be load
-    Loading(Activity activity) {
+    public Loading(Activity activity) {
         this.activity = activity;
         this.handler = new Handler();
     }
 
     private static int ANIMATION_TIMEOUT = 3100;
     // Launch the loading screen
-    void startLoading() {
+    public void startLoading() {
         Builder builder = new Builder(this.activity, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
         LayoutInflater inflater = this.activity.getLayoutInflater();
         builder.setView(inflater.inflate(R.layout.loading, null));
