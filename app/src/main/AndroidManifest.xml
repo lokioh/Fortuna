@@ -9,7 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fortuna">
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".config.CardActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".config.ProfilePictureActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".config.PorfilePictureActivity" />
+        <activity
+            android:name=".config.AuthenticationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".tutorial.StartUp"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
