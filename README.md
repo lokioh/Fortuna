@@ -104,7 +104,7 @@ Or on our mail:
 Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- LINKS --> 
-[contributors-shield]: https://img.shields.io/github/contributors/lokioh/Fortuna.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/lokioh/Fortuna
 [contributors-url]: https://github.com/lokioh/Fortuna/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/lokioh/Fortuna.svg?style=for-the-badge
 [forks-url]: https://github.com/lokioh/Fortuna/network/members
