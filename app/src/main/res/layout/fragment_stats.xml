@@ -1,339 +1,366 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
     android:layout_height="match_parent"
-    tools:context=".views.StatsFragment"
-    android:layout_marginTop="-30dp">
-
-
-
-    <!-- TODO: Update blank fragment layout -->
-
+    tools:context=".views.StatsFragment">
 
 
     <!-- HOME-->
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        >
+        android:layout_width="300dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout5"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayout5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <!-- icon -->
         <TextView
             android:id="@+id/home_ic"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="90dp"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:text="🏡"
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:text="🏡" />
+            android:textSize="30dp" />
 
         <!-- title -->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="110dp"
-            android:textStyle="bold"
+            android:layout_width="55dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/home_ic"
+            android:text="@string/Home"
             android:textColor="@color/black"
-            android:text="@string/Home" />
+            android:textStyle="bold" />
 
         <!-- value -->
         <TextView
             android:id="@+id/textView_homeValue"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="110dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_above="@id/progressBar_home"
+            android:layout_alignParentEnd="true"
+            android:gravity="end"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <!-- progress bar begin -->
-
         <ProgressBar
             android:id="@+id/progressBar_home"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="140dp"
+            android:layout_below="@id/home_ic"
+            android:layout_marginStart="20dp"
             android:indeterminate="false"
-            android:layout_marginStart="35dp"
-            android:layout_marginEnd="55dp"
-            android:progressDrawable="@drawable/progress_bar_home"/>
-
+            android:progressDrawable="@drawable/progress_bar_home" />
         <!-- progress bar end -->
 
     </RelativeLayout>
 
-    <!-- PHONE -->
+    <!--PHONE-->
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:id="@+id/relativeLayout5"
+        android:layout_width="300dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout6"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayout6"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout6"
+        app:layout_editor_absoluteY="100dp">
 
         <!-- icon -->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="170dp"
+            android:id="@+id/phone_ic"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:text="📱"
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:text="📱" />
+            android:textSize="30dp" />
 
         <!-- title-->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="190dp"
+            android:layout_width="55dp"
+            android:layout_height="20dp"
+            android:layout_toRightOf="@id/phone_ic"
+            android:text="Phone"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:text="Phone" />
+            android:textStyle="bold" />
 
         <!-- value -->
         <TextView
             android:id="@+id/textView_phoneValue"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="190dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_above="@id/progressBar_phone"
+            android:layout_alignParentEnd="true"
+            android:gravity="end"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <!-- progress bar begin -->
-
-        <!-- background -->
-
         <ProgressBar
             android:id="@+id/progressBar_phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phone_ic"
+            android:layout_marginStart="20dp"
             android:indeterminate="false"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="220dp"
-            android:layout_marginEnd="55dp"
-            android:progressDrawable="@drawable/progress_bar_phone"/>
-
+            android:progressDrawable="@drawable/progress_bar_phone" />
         <!-- progress bar end -->
 
     </RelativeLayout>
 
-    <!-- CAR -->
+    <!--CAR-->
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:id="@+id/relativeLayout6"
+        android:layout_width="300dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout7"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayout7"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout7"
+        app:layout_editor_absoluteY="200dp">
 
         <!-- icon -->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="250dp"
+            android:id="@+id/car_ic"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:text="🚗"
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:text="🚗" />
+            android:textSize="30dp" />
 
 
         <!-- title -->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="270dp"
+            android:layout_width="55dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/car_ic"
+            android:text="Car"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:text="Car" />
+            android:textStyle="bold" />
 
         <!-- value -->
         <TextView
             android:id="@+id/textView_carValue"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="270dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_above="@id/progressBar_car"
+            android:layout_alignParentEnd="true"
+            android:gravity="end"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <!-- progress bar begin -->
-
         <ProgressBar
             android:id="@+id/progressBar_car"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/car_ic"
+            android:layout_marginStart="20dp"
             android:indeterminate="false"
-            android:progressDrawable="@drawable/progress_bar_car"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="300dp"
-            android:layout_marginEnd="55dp"/>
-
+            android:progressDrawable="@drawable/progress_bar_car" />
         <!-- progress bar end -->
 
     </RelativeLayout>
 
-    <!--HEALTH -->
+    <!---HEALTH-->
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:id="@+id/relativeLayout7"
+        android:layout_width="300dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout8"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayout8"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout8"
+        app:layout_editor_absoluteY="300dp">
 
         <!-- icon -->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="330dp"
+            android:id="@+id/health_ic"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:text="🏥"
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:text="🏥" />
+            android:textSize="30dp" />
 
         <!-- title -->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="350dp"
+            android:layout_width="55dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Health"
+            android:layout_toRightOf="@id/health_ic"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:text="Health" />
+            android:textStyle="bold" />
 
         <!-- value -->
         <TextView
             android:id="@+id/textView_healthValue"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="350dp"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_above="@id/progressBar_health"
+            android:layout_alignParentEnd="true"
+            android:gravity="end"
             android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <!-- progress bar begin -->
 
         <ProgressBar
             android:id="@+id/progressBar_health"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/health_ic"
+            android:layout_marginStart="20dp"
             android:indeterminate="false"
-            android:progressDrawable="@drawable/progress_bar_health"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="380dp"
-            android:layout_marginEnd="55dp"/>
+            android:progressDrawable="@drawable/progress_bar_health" />
 
         <!-- progress bar end -->
 
     </RelativeLayout>
 
-    <!-- FOOD -->
+    <!--FOOD-->
+
+    <!--OTHER-->
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:id="@+id/relativeLayout8"
+        android:layout_width="300dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout9"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayout9"
+        app:layout_constraintStart_toStartOf="@+id/relativeLayout9"
+        app:layout_editor_absoluteY="400dp">
 
         <!-- icon -->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="410dp"
+            android:id="@+id/food_ic"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:text="🍔"
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:text="🍔" />
+            android:textSize="30dp" />
 
         <!-- title -->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="430dp"
+            android:layout_width="55dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/food_ic"
+            android:text="Food"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:text="Food" />
+            android:textStyle="bold" />
 
         <!-- value -->
         <TextView
             android:id="@+id/textView_foodValue"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="430dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_above="@id/progressBar_food"
+            android:layout_alignParentEnd="true"
+            android:gravity="end"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
 
         <!-- progress bar begin -->
 
         <ProgressBar
             android:id="@+id/progressBar_food"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/food_ic"
+            android:layout_marginStart="20dp"
             android:indeterminate="false"
-            android:progressDrawable="@drawable/progress_bar_food"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="460dp"
-            android:layout_marginEnd="55dp"/>
+            android:progressDrawable="@drawable/progress_bar_food" />
 
         <!-- progress bar end -->
 
     </RelativeLayout>
 
-    <!-- OTHER -->
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:id="@+id/relativeLayout9"
+        android:layout_width="300dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="170dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_editor_absoluteY="500dp">
 
         <!-- icon -->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="490dp"
+            android:id="@+id/other_ic"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:text="➕"
             android:textColor="@color/black"
-            android:textSize="30dp"
-            android:text="➕" />
+            android:textSize="30dp" />
 
         <!-- title -->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="80dp"
-            android:layout_marginTop="510dp"
-            android:textStyle="bold"
+            android:layout_width="55dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/other_ic"
+            android:text="Other"
             android:textColor="@color/black"
-            android:text="Other" />
+            android:textStyle="bold" />
 
         <!-- value -->
         <TextView
             android:id="@+id/textView_otherValue"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="300dp"
-            android:layout_marginTop="510dp"
+            android:layout_width="100dp"
+            android:layout_height="25dp"
+            android:layout_above="@id/progressBar_other"
+            android:layout_alignParentEnd="true"
+            android:gravity="end"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <!-- progress bar begin -->
 
         <ProgressBar
             android:id="@+id/progressBar_other"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/other_ic"
+            android:layout_marginStart="20dp"
             android:indeterminate="false"
-            android:progressDrawable="@drawable/progress_bar_other"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="540dp"
-            android:layout_marginEnd="55dp"/>
+            android:progressDrawable="@drawable/progress_bar_other" />
 
         <!-- progress bar end -->
 
 
-
     </RelativeLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 

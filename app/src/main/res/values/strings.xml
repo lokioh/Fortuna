@@ -36,5 +36,7 @@
 
     <!-- eighth_slide_on_boarding_screen strings values -->
     <string name="eighth_slide_tuto_txt">If you click there you can add a planned expense.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
