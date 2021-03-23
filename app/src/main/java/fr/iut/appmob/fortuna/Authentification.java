@@ -1,6 +1,7 @@
 package fr.iut.appmob.fortuna;
 
 import android.app.Activity;
+import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.biometric.BiometricManager;
@@ -31,11 +32,11 @@ public class Authentification {
     }
 
     public void start() {
-        if(!hasHardware()) return;
+        if(!isSuccess()) return;
         this.prompt.authenticate(this.info);
     }
 
-    private boolean hasHardware() {
+    private boolean isSuccess() {
         return manager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG)
                 == BiometricManager.BIOMETRIC_SUCCESS;
     }
