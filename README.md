@@ -74,25 +74,25 @@ Or on our mail:
 <!-- NON OPERATIONAL -->
 ## Non Operational
 
-=> In the home view, the scroll view showing the details about each of your expense isn't working
+- In the home view, the scroll view showing the details about each of your expense isn't working
 <br />
-=> In the setting view, the add schedule operation isn't working
+- In the setting view, the add schedule operation isn't working
 <br />
 
 <!-- FUTURE IMPROVEMENTS -->
 ## Future Improvements
 
-=> Add a better control of each input with some RegEx when needing
+- Add a better control of each input with some RegEx when needing
 <br />
-=> In the add expense dialog, change the category input by a listView
+- In the add expense dialog, change the category input by a listView
 <br />
-=> Make the scrollView working (in Home view)
+- Make the scrollView working (in Home view)
 <br />
-=> Allow the user to schedule an expense
+- Allow the user to schedule an expense
 <br />
-=> In the home view, the scroll view showing the details about each of your expense isn't working
+- In the home view, the scroll view showing the details about each of your expense isn't working
 <br />
-=> In the settings view, allow user to put a personal image as a profile icon
+- In the settings view, allow user to put a personal image as a profile icon
 <br />
 
 <!-- LICENSE -->
