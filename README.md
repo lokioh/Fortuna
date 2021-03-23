@@ -1,16 +1,8 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="app/src/main/res/drawable/logo_fortuna" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Fortuna</h3>
@@ -102,16 +94,3 @@ Or on our mail:
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-<!-- LINKS --> 
-[contributors-shield]: https://img.shields.io/github/contributors/lokioh/Fortuna
-[contributors-url]: https://github.com/lokioh/Fortuna/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/lokioh/Fortuna.svg?style=for-the-badge
-[forks-url]: https://github.com/lokioh/Fortuna/network/members
-[stars-shield]: https://img.shields.io/github/stars/lokioh/Fortuna.svg?style=for-the-badge
-[stars-url]: https://github.com/lokioh/Fortuna/stargazers
-[issues-shield]: https://img.shields.io/github/issues/lokioh/Fortuna.svg?style=for-the-badge
-[issues-url]: https://github.com/lokioh/Fortuna/issues
-[license-shield]: https://img.shields.io/github/license/lokioh/Fortuna.svg?style=for-the-badge
-[license-url]: https://github.com/lokioh/Fortuna/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
