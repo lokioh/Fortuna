@@ -43,4 +43,7 @@ dependencies {
     implementation 'com.ismaeldivita.chipnavigation:chip-navigation-bar:1.3.4'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.3.70'
 
+    // for fingerprint
+    implementation "androidx.biometric:biometric:1.1.0"
+
 }
