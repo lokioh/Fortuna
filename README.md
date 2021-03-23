@@ -1,43 +1,104 @@
-# Fortuna
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
-to access the code:
 
-  you can contact us on our respective discord:
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Fortuna</h3>
+
+  <p align="center">
+    Cross-platform application which allows to get access or to offer services !
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+  </p>
+</p>
+
+
+
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#get-access-to-the-project">Get Access to the project</a>
+    </li>
+    <li>
+      <a href="#install-and-launch-it">Install & launch it</a>
+    </li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#non-operational">Non Operational</a></li>
+    <li><a href="#future-improvement">Future Improvement</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
+
+
+
+<!-- Get Access to the project -->
+## Get Access To The Project
+
+you can contact us on our respective discord:
   - Vincentime#8847
   - triXer#5002
   - Loki#8679
 
-
-  Or on our mail:
+Or on our mail:
   - vincent.ngy.pro@gmail.com
   - marwan.mezroui@gmail.com
   - loiclim.etu@gmail.com
 
+<!-- GETTING STARTED -->
+## Install And Launch It
 
-to install the project:
+1. Clone the repo
+   ```sh
+   git clone https://github.com/lokioh/Fortuna
+   ```
+2. Create an emulator 
+3. Launch the app on Android Studio
+ 
+<!-- FEATURES -->
+## Features
 
-  you need to clone the project
-  
-  for this, it is necessary:
-    - open a cmd window
-    - create a folder
-    - make the order "git clone <distant repository's url>"
+=> fingerprint authentification
+=> 3 main views (Home, Stats, Settings)
+=> Add a new deposit 
+=> Add a new expense 
+=> see stats about your money management
 
+<!-- NON OPERATIONAL -->
+## Non Operational
 
-we have been able to test this code on the following machines:
-  - Xiaomi Mi 9 T
-  - Google pixel 3
-  - Google pixel 4a
+=> In the home view, the scroll view showing the details about each of your expense isn't working
+=> In the setting view, the add schedule operation isn't working
 
+<!-- FUTURE IMPROVEMENTS -->
+## Future Improvements
 
-Currently our application can :
-  - You can change the slide from the nav bar (Home, Stats, Setting)
-  - Add a new car
-  - Add a new deposit
-  - Add a new spending
-  - Add a new expense schedule
-  - Change the months from a drop-down menu
+=> Add a better control of each input with some RegEx when needing
+=> In the add expense dialog, change the category input by a listView
+=> Make the scrollView working (in Home view)
+=> Allow the user to schedule an expense
+=> In the home view, the scroll view showing the details about each of your expense isn't working
+=> In the settings view, allow user to put a personal image as a profile icon
 
+<!-- LICENSE -->
+## License
 
-Possible improvement:
-  - retrieve a history of last month's expenses
+Distributed under the MIT License. See `LICENSE` for more information.
