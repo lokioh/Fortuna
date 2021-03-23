@@ -32,6 +32,7 @@ public class Loading {
             @Override
             public void run() {
                 stopLoading();
+                new Authentification(activity).start();
             }
         }, ANIMATION_TIMEOUT);
     }
