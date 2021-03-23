@@ -34,7 +34,7 @@ public class DataManagement {
         editor.apply();
     }
 
-    public static void addNewExpense(Context context, String expenseValue) {
+    public static void addNewExpense(Context context, String expenseValue, String catg) {
         float expense = getExpense(context);
         float newExpense = Float.parseFloat(expenseValue);
         float total = expense + newExpense;
@@ -44,7 +44,7 @@ public class DataManagement {
 
         SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putFloat("expense", total);
+        editor.putFloat("expense" + catg, total);
         editor.putFloat("balance", newBalance);
         editor.apply();
     }

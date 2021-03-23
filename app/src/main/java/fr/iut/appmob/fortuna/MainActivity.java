@@ -31,13 +31,11 @@ public class MainActivity extends AppCompatActivity {
     private boolean isOpen = false;
 
     // for the navbar
-    private ChipNavigationBar navbar;
+    private static ChipNavigationBar navbar;
     private FragmentManager manager;
 
-    FragmentManager fragmentManager;
-    HomeFragment homeFragment = new HomeFragment();
-
     private static SharedPreferences CONFIG;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // init our differents elements
-        this.navbar = findViewById(R.id.bottomNav);
+        navbar = findViewById(R.id.bottomNav);
         this.manager = getSupportFragmentManager();
 
         this.setButtons();
@@ -62,10 +60,12 @@ public class MainActivity extends AppCompatActivity {
         this.setListener();
 
         // default selected item in the navbar
-        this.navbar.setItemSelected(R.id.menuHome, true);
+        navbar.setItemSelected(R.id.menuHome, true);
 
-        fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().add(R.id.fragment_container, homeFragment).show(homeFragment).commit();
+    }
+
+    public static ChipNavigationBar getNavbar() {
+        return navbar;
     }
 
     private void openConfigActivity(){
@@ -153,6 +153,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
 
     // animate the buttons according to the state of
     // the action button open or close

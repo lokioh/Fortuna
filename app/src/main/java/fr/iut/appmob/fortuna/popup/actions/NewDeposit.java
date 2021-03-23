@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import fr.iut.appmob.fortuna.MainActivity;
 import fr.iut.appmob.fortuna.R;
 import fr.iut.appmob.fortuna.popup.Popup;
 import fr.iut.appmob.fortuna.DataManagement;
@@ -47,6 +48,8 @@ public class NewDeposit extends Popup {
         } else {
             Log.i("NewDeposit", "value : " + value + ", " + "category : deposit" );
             DataManagement.addNewDeposit(getContext(), depositValue);
+            MainActivity.getNavbar().setItemSelected(R.id.menuHome, false);
+            MainActivity.getNavbar().setItemSelected(R.id.menuHome, true);
             this.dismiss();
         }
     }

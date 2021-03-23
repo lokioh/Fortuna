@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import fr.iut.appmob.fortuna.MainActivity;
 import fr.iut.appmob.fortuna.R;
 import fr.iut.appmob.fortuna.popup.Popup;
 import fr.iut.appmob.fortuna.DataManagement;
@@ -14,6 +15,7 @@ import fr.iut.appmob.fortuna.DataManagement;
 public class NewSpending extends Popup {
 
     EditText editText_newSpending;
+    EditText editText_categories;
 
     private static final String[] CATEGORIES = {
             "Home",
@@ -68,8 +70,12 @@ public class NewSpending extends Popup {
                         "Phone or Car or Health or Food or Sport " +
                         "or Gift or Other");
             } else {
-                DataManagement.addNewExpense(getContext(), spendingValue);
+                editText_categories = findViewById(R.id.editTextCategoryAddNewSpendingPopup);
+                String categories = editText_categories.getText().toString();
+                DataManagement.addNewExpense(getContext(), spendingValue, categories);
                 Log.i("NewSpending", "value : " + value + ", " + "category : " + category);
+                MainActivity.getNavbar().setItemSelected(R.id.menuHome, false);
+                MainActivity.getNavbar().setItemSelected(R.id.menuHome, true);
                 this.dismiss();
             }
         }

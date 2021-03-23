@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
+import fr.iut.appmob.fortuna.MainActivity;
 import fr.iut.appmob.fortuna.R;
 import fr.iut.appmob.fortuna.popup.Popup;
 
@@ -97,20 +98,9 @@ public class HomeFragment extends Fragment {
         textView_income.setText("$" + df.format(incomeValue));
         textView_expense.setText("$" + df.format(expenseValue));
 
-        refresh(1000);
+
     }
 
-    private void refresh(int millsec) {
-        final Handler handler = new Handler();
 
-        final Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                setContent();
-            }
-        };
-
-        handler.postDelayed(runnable, millsec);
-    }
 
 }
