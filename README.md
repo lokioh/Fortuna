@@ -70,7 +70,7 @@ Or on our mail:
    ```sh
    git clone https://github.com/lokioh/Fortuna
    ```
-2. Create an emulator 
+2. Create an emulator (worked perfectly on pixel 4, xiaomi mi 9T or pixel 3)
 3. Launch the app on Android Studio
  
 <!-- FEATURES -->
@@ -102,3 +102,16 @@ Or on our mail:
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+
+<!-- LINKS --> 
+[contributors-shield]: https://img.shields.io/github/contributors/lokioh/Fortuna.svg?style=for-the-badge
+[contributors-url]: https://github.com/lokioh/Fortuna/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/lokioh/Fortuna.svg?style=for-the-badge
+[forks-url]: https://github.com/lokioh/Fortuna/network/members
+[stars-shield]: https://img.shields.io/github/stars/lokioh/Fortuna.svg?style=for-the-badge
+[stars-url]: https://github.com/lokioh/Fortuna/stargazers
+[issues-shield]: https://img.shields.io/github/issues/lokioh/Fortuna.svg?style=for-the-badge
+[issues-url]: https://github.com/lokioh/Fortuna/issues
+[license-shield]: https://img.shields.io/github/license/lokioh/Fortuna.svg?style=for-the-badge
+[license-url]: https://github.com/lokioh/Fortuna/blob/master/LICENSE.txt
+[product-screenshot]: images/screenshot.png
