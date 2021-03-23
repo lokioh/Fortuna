@@ -8,13 +8,11 @@
   <h3 align="center">Fortuna</h3>
 
   <p align="center">
-    Cross-platform application which allows to get access or to offer services !
+    Android Application which allows you to manage your money
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
     ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
