@@ -61,6 +61,7 @@ Or on our mail:
 ## Features
 
 => fingerprint authentification
+<br />
 => 3 main views (Home, Stats, Settings)
 => Add a new deposit 
 => Add a new expense 
