@@ -35,16 +35,22 @@ public class DataManagement {
     }
 
     public static void addNewExpense(Context context, String expenseValue, String catg) {
-        float expense = getExpense(context);
+        float expensett = getExpense(context, catg);
         float newExpense = Float.parseFloat(expenseValue);
-        float total = expense + newExpense;
+        float total = expensett + newExpense;
+
+        float expense = getExpenseTt(context);
+        float totalL = expense + newExpense;
 
         float balance = getBalance(context);
         float newBalance = balance - newExpense;
 
+        String dbName = "expense" + catg;
+
         SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putFloat("expense" + catg, total);
+        editor.putFloat("expense", totalL);
+        editor.putFloat(dbName, total);
         editor.putFloat("balance", newBalance);
         editor.apply();
     }
@@ -54,14 +60,68 @@ public class DataManagement {
         return sharedPref.getFloat("deposit", 0);
     }
 
-    public static float getExpense(Context context) {
+    public static float getExpense(Context context, String catg) {
         SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
-        return sharedPref.getFloat("expense", 0);
+        String dbName = "expense" + catg;
+        return sharedPref.getFloat(dbName, 0);
     }
 
     public static float getBalance(Context context) {
         SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
         return sharedPref.getFloat("balance", 0);
+    }
+
+    public static float getExpenseTt(Context context) {
+        SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
+        return sharedPref.getFloat("expense", 0);
+    }
+
+    public static float getProgressHome(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
+        float value = sharedPreferences.getFloat("expenseHome", 0);
+        float progress = (value * 100) / (getExpenseTt(context));
+
+        return progress;
+    }
+
+    public static float getProgressPhone(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
+        float value = sharedPreferences.getFloat("expensePhone", 0);
+        float progress = (value * 100) / (getExpenseTt(context));
+
+        return progress;
+    }
+
+    public static float getProgressCar(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
+        float value = sharedPreferences.getFloat("expenseCar", 0);
+        float progress = (value * 100) / (getExpenseTt(context));
+
+        return progress;
+    }
+
+    public static float getProgressHealth(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
+        float value = sharedPreferences.getFloat("expenseHealth", 0);
+        float progress = (value * 100) / (getExpenseTt(context));
+
+        return progress;
+    }
+
+    public static float getProgressFood(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
+        float value = sharedPreferences.getFloat("expenseFood", 0);
+        float progress = (value * 100) / (getExpenseTt(context));
+
+        return progress;
+    }
+
+    public static float getProgressOther(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
+        float value = sharedPreferences.getFloat("expenseOther", 0);
+        float progress = (value * 100) / (getExpenseTt(context));
+
+        return progress;
     }
 
 }

@@ -23,6 +23,8 @@
     <color name="light_blue">#86E7FF</color>
     <color name="light_red">#FF5252</color>
     <color name="light_green">#7FFF6A</color>
+    <color name="pink">#FC7EFF</color>
+    <color name="light_orange">#FF6B00</color>
 
     <!-- settings view colors -->
     <color name="magenta">#DDAADD</color>

@@ -12,6 +12,8 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+
+
     <!-- HOME-->
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -20,6 +22,7 @@
 
         <!-- icon -->
         <TextView
+            android:id="@+id/home_ic"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="40dp"
@@ -40,47 +43,26 @@
 
         <!-- value -->
         <TextView
+            android:id="@+id/textView_homeValue"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="300dp"
             android:layout_marginTop="110dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="-$800" />
+            android:textColor="@color/black"/>
 
         <!-- progress bar begin -->
 
         <ProgressBar
-            android:id="@+id/progressBar"
+            android:id="@+id/progressBar_home"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:progress="25"
-            android:progressTint="@color/black"
-            android:secondaryProgressTint="@color/white"
-            />
-
-        <!-- background -->
-        <RelativeLayout
-            android:layout_width="325dp"
-            android:layout_height="25dp"
-            android:background="@drawable/progressbar_shape"
-            android:layout_marginStart="35dp"
             android:layout_marginTop="140dp"
-            />
-
-        <!-- progress -->
-        <RelativeLayout
-            android:layout_width="325dp"
-            android:layout_height="25dp"
-            android:background="@drawable/progressbar_shape"
-            android:backgroundTint="@color/yellow"
+            android:indeterminate="false"
             android:layout_marginStart="35dp"
-            android:layout_marginTop="140dp"
-            />
-
-
+            android:layout_marginEnd="55dp"
+            android:progressDrawable="@drawable/progress_bar_home"/>
 
         <!-- progress bar end -->
 
@@ -113,34 +95,28 @@
 
         <!-- value -->
         <TextView
+            android:id="@+id/textView_phoneValue"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="300dp"
             android:layout_marginTop="190dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="-$472" />
+            android:textColor="@color/black"/>
 
         <!-- progress bar begin -->
 
         <!-- background -->
-        <RelativeLayout
-            android:layout_width="325dp"
-            android:layout_height="25dp"
-            android:background="@drawable/progressbar_shape"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="220dp"
-            />
 
-        <!-- progress -->
-        <RelativeLayout
-            android:layout_width="243.75dp"
-            android:layout_height="25dp"
-            android:background="@drawable/progressbar_shape"
-            android:backgroundTint="@color/light_blue"
+        <ProgressBar
+            android:id="@+id/progressBar_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminate="false"
             android:layout_marginStart="35dp"
             android:layout_marginTop="220dp"
-            />
+            android:layout_marginEnd="55dp"
+            android:progressDrawable="@drawable/progress_bar_phone"/>
 
         <!-- progress bar end -->
 
@@ -148,8 +124,8 @@
 
     <!-- CAR -->
     <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
         <!-- icon -->
         <TextView
@@ -174,34 +150,26 @@
 
         <!-- value -->
         <TextView
+            android:id="@+id/textView_carValue"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="300dp"
             android:layout_marginTop="270dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="-$314" />
+            android:textColor="@color/black"/>
 
         <!-- progress bar begin -->
 
-        <!-- background -->
-        <RelativeLayout
-            android:layout_width="325dp"
-            android:layout_height="25dp"
-            android:background="@drawable/progressbar_shape"
+        <ProgressBar
+            android:id="@+id/progressBar_car"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/progress_bar_car"
             android:layout_marginStart="35dp"
             android:layout_marginTop="300dp"
-            />
-
-        <!-- progress -->
-        <RelativeLayout
-            android:layout_width="162.5dp"
-            android:layout_height="25dp"
-            android:background="@drawable/progressbar_shape"
-            android:backgroundTint="@color/heliotrope"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="300dp"
-            />
+            android:layout_marginEnd="55dp"/>
 
         <!-- progress bar end -->
 
@@ -234,34 +202,26 @@
 
         <!-- value -->
         <TextView
+            android:id="@+id/textView_healthValue"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="300dp"
             android:layout_marginTop="350dp"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:text="-$256" />
+            android:textStyle="bold"/>
 
         <!-- progress bar begin -->
 
-        <!-- background -->
-        <RelativeLayout
-            android:layout_width="325dp"
-            android:layout_height="25dp"
-            android:background="@drawable/progressbar_shape"
+        <ProgressBar
+            android:id="@+id/progressBar_health"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/progress_bar_health"
             android:layout_marginStart="35dp"
             android:layout_marginTop="380dp"
-            />
-
-        <!-- progress -->
-        <RelativeLayout
-            android:layout_width="162.5dp"
-            android:layout_height="25dp"
-            android:background="@drawable/progressbar_shape"
-            android:backgroundTint="@color/light_red"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="380dp"
-            />
+            android:layout_marginEnd="55dp"/>
 
         <!-- progress bar end -->
 
@@ -294,34 +254,26 @@
 
         <!-- value -->
         <TextView
+            android:id="@+id/textView_foodValue"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="300dp"
             android:layout_marginTop="430dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="-$139" />
+            android:textColor="@color/black"/>
 
         <!-- progress bar begin -->
 
-        <!-- background -->
-        <RelativeLayout
-            android:layout_width="325dp"
-            android:layout_height="25dp"
-            android:background="@drawable/progressbar_shape"
+        <ProgressBar
+            android:id="@+id/progressBar_food"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/progress_bar_food"
             android:layout_marginStart="35dp"
             android:layout_marginTop="460dp"
-            />
-
-        <!-- progress -->
-        <RelativeLayout
-            android:layout_width="81.25dp"
-            android:layout_height="25dp"
-            android:background="@drawable/progressbar_shape"
-            android:backgroundTint="@color/light_green"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="460dp"
-            />
+            android:layout_marginEnd="55dp"/>
 
         <!-- progress bar end -->
 
@@ -354,39 +306,32 @@
 
         <!-- value -->
         <TextView
+            android:id="@+id/textView_otherValue"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="300dp"
             android:layout_marginTop="510dp"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:text="-$78" />
+            />
 
         <!-- progress bar begin -->
 
-        <!-- background -->
-        <RelativeLayout
-            android:layout_width="325dp"
-            android:layout_height="25dp"
-            android:background="@drawable/progressbar_shape"
+        <ProgressBar
+            android:id="@+id/progressBar_other"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/progress_bar_other"
             android:layout_marginStart="35dp"
             android:layout_marginTop="540dp"
-            />
-
-        <!-- progress -->
-        <RelativeLayout
-            android:layout_width="48.75dp"
-            android:layout_height="25dp"
-            android:background="@drawable/progressbar_shape"
-            android:backgroundTint="@color/sandy_brown"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="540dp"
-            />
+            android:layout_marginEnd="55dp"/>
 
         <!-- progress bar end -->
 
 
-        
+
     </RelativeLayout>
 
 </RelativeLayout>

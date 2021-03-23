@@ -36,9 +36,7 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    TextView textView_balance;
-    TextView textView_income;
-    TextView textView_expense;
+    TextView textView_balance, textView_income, textView_expense;
 
     public HomeFragment() {
         // Required empty public constructor
