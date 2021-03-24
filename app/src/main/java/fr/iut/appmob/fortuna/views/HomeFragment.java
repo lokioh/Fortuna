@@ -124,7 +124,7 @@ public class HomeFragment extends Fragment {
         }
 
         DataEntry[] chartData = new DataEntry[dataAsFloat.size()];
-        for (int i = 0; i < dataAsFloat.size(); ++i) {
+        for (int i = dataAsFloat.size() - 1; i >= 0; --i) {
             chartData[i] = new ValueDataEntry(keys.get(i), dataAsFloat.get(i));
         }
 
