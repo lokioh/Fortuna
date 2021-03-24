@@ -27,7 +27,7 @@
     </li>
     <li><a href="#features">Features</a></li>
     <li><a href="#non-operational">Non Operational</a></li>
-    <li><a href="#future-improvement">Future Improvement</a></li>
+    <li><a href="#future-improvements">Future Improvements</a></li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
