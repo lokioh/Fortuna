@@ -81,6 +81,7 @@
         android:layout_marginTop="12dp"
         android:background="@drawable/home_card"
         android:backgroundTint="@color/salmon"
+        android:id="@+id/expenseLayout"
         app:layout_constraintEnd_toEndOf="@+id/relativeLayout4"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/relativeLayout3"
@@ -106,6 +107,25 @@
             android:layout_marginTop="-3dp"
             android:textSize="20dp" />
     </RelativeLayout>
+
+    <!-- CHART AREA -->
+    <RelativeLayout
+        android:layout_width="330dp"
+        android:layout_height="330dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="25dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+            <com.anychart.AnyChartView
+                android:id="@+id/chart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+    </RelativeLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

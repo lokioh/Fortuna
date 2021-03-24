@@ -9,13 +9,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
+import android.renderscript.Sampler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.anychart.AnyChart;
+import com.anychart.AnyChartView;
+import com.anychart.chart.common.dataentry.DataEntry;
+import com.anychart.chart.common.dataentry.ValueDataEntry;
+import com.anychart.charts.Pie;
+import com.anychart.core.stock.series.Line;
+
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 import fr.iut.appmob.fortuna.MainActivity;
 import fr.iut.appmob.fortuna.R;
@@ -79,10 +89,13 @@ public class HomeFragment extends Fragment {
 
         init(view);
         setContent();
+        setChart(view);
 
         return view;
 
     }
+
+
 
     // init our needed variables
     private void init(View view) {
@@ -100,6 +113,26 @@ public class HomeFragment extends Fragment {
         txtViewBalance.setText("$" + df.format(MONEY.getFloat("balance", 0)));
         txtViewIncome.setText("$" + df.format(MONEY.getFloat("deposit",0)));
         txtViewExpense.setText("$" + df.format( MONEY.getFloat("expense", 0)));
+
+    }
+
+    private void setChart(View view) {
+        SharedPreferences MONEY = this.getActivity().getSharedPreferences("MONEY", Context.MODE_PRIVATE);
+        Float deposit = MONEY.getFloat("deposit",0);
+        Float expense = MONEY.getFloat("expense",0);
+
+        Pie chart = AnyChart.pie();
+
+        ArrayList<DataEntry> data = new ArrayList<>();
+        data.add(new ValueDataEntry("deposit", deposit));
+        data.add(new ValueDataEntry("expense", expense));
+
+        chart.data(data);
+        chart.legend().enabled(false);
+
+        AnyChartView anyChartView = (AnyChartView) view.findViewById(R.id.chart);
+        anyChartView.setChart(chart);
+        chart.select(0);
 
     }
 
