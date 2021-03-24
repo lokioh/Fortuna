@@ -61,16 +61,18 @@ Or on our mail:
 <!-- FEATURES -->
 ## Features
 
+- configuration forms
+- Loading
 - fingerprint authentification
 - 3 main views (Home, Stats, Settings)
 - Add a new deposit 
 - Add a new expense 
 - see stats about your money management
+- see evolution of your income in the home view
 
 <!-- NON OPERATIONAL -->
 ## Non Operational
 
-- In the home view, the scroll view showing the details about each of your expense isn't working
 - In the setting view, the add schedule operation isn't working
 
 <!-- FUTURE IMPROVEMENTS -->
@@ -78,9 +80,8 @@ Or on our mail:
 
 - Add a better control of each input with some RegEx when needing
 - In the add expense dialog, change the category input by a listView
-- Make the scrollView working (in Home view)
+- Add the details of each operations (Today : $x, Yesterday: $x)
 - Allow the user to schedule an expense
-- In the home view, the scroll view showing the details about each of your expense isn't working
 - In the settings view, allow user to put a personal image as a profile icon
 
 <!-- LICENSE -->
