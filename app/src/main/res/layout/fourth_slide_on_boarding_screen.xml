@@ -7,7 +7,7 @@
         android:id="@+id/fourth_slide_img_on_boarding_screen"
         android:layout_width="wrap_content"
         android:layout_height="350dp"
-        android:src="@drawable/fleche_dls"
+        android:src="@drawable/fourth_slide"
         android:layout_centerHorizontal="true" />
 
     <!-- Text OnBoarding Screen -->

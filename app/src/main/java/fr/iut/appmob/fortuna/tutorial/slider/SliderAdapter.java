@@ -25,10 +25,10 @@ public class SliderAdapter extends PagerAdapter {
     int images[] = {
 
             R.drawable.logo_fortuna,
-            R.drawable.fleche_button,
-            R.drawable.fleche_oui,
-            R.drawable.fleche_dls,
-            R.drawable.fleche_nav_home,
+            R.drawable.second_slide,
+            R.drawable.third_slide,
+            R.drawable.fourth_slide,
+            R.drawable.fifth_slide,
             R.drawable.fleche_stat,
             R.drawable.fleche_setting,
             R.drawable.fleche_schedule,
@@ -43,7 +43,6 @@ public class SliderAdapter extends PagerAdapter {
             R.string.fifth_slide_tuto_txt,
             R.string.sixth_slide_tuto_txt,
             R.string.seventh_slide_tuto_txt,
-            R.string.eighth_slide_tuto_txt,
     };
 
 
