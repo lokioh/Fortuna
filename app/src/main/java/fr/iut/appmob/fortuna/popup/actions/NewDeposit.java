@@ -2,7 +2,6 @@ package fr.iut.appmob.fortuna.popup.actions;
 
 import android.app.Activity;
 import android.text.Editable;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;

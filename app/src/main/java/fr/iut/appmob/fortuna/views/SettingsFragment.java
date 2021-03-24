@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import fr.iut.appmob.fortuna.MainActivity;
 import fr.iut.appmob.fortuna.R;
 
 /**
