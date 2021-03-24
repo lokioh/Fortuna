@@ -11,7 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import fr.iut.appmob.fortuna.Loading;
+import fr.iut.appmob.fortuna.init.Loading;
 import fr.iut.appmob.fortuna.R;
 
 public class AuthenticationActivity extends AppCompatActivity {

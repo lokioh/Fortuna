@@ -1,4 +1,4 @@
-package fr.iut.appmob.fortuna;
+package fr.iut.appmob.fortuna.init;
 
 import android.app.Activity;
 import android.content.Intent;
