@@ -55,7 +55,7 @@ Or on our mail:
    git clone https://github.com/lokioh/Fortuna
    ```
 2. Create an emulator (worked perfectly on pixel 4, xiaomi mi 9T or pixel 3)
-**3. On your emulator, SET A FINGERPRINT**
+3. **On your emulator, SET A FINGERPRINT**
 4. Launch the app on Android Studio
  
 <!-- FEATURES -->
