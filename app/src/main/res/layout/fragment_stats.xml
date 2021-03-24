@@ -358,7 +358,6 @@
 
         <!-- progress bar end -->
 
-
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

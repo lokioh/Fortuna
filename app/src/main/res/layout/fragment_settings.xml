@@ -9,11 +9,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <!-- USER DATA SECTION -->
-
-
     <!-- background -->
-
-    <!-- EXPENSE SCHEDULE SECTION -->
     <RelativeLayout
         android:id="@+id/relativeLayout2"
         android:layout_width="330dp"
@@ -26,13 +22,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <!-- user's icon -->
         <androidx.cardview.widget.CardView
             android:layout_width="125dp"
             android:layout_height="125dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="35dp"
             app:cardCornerRadius="125dp">
-            <!-- user's icon -->
+
             <ImageView
                 android:id="@+id/userIcon"
                 android:layout_width="match_parent"
@@ -56,9 +53,9 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
-
     </RelativeLayout>
 
+    <!-- EXPENSE SCHEDULE SECTION -->
     <RelativeLayout
         android:layout_width="250dp"
         android:layout_height="0dp"

@@ -8,7 +8,7 @@
 
 
     <!-- SUMMARY AREA -->
-
+    <!-- balance -->
     <RelativeLayout
         android:id="@+id/relativeLayout4"
         android:layout_width="325dp"
@@ -42,7 +42,7 @@
             android:textSize="20dp" />
     </RelativeLayout>
 
-
+    <!-- income -->
     <RelativeLayout
         android:id="@+id/relativeLayout3"
         android:layout_width="155dp"
@@ -74,6 +74,7 @@
             android:textSize="20dp" />
     </RelativeLayout>
 
+    <!-- expense -->
     <RelativeLayout
         android:layout_width="155dp"
         android:layout_height="90dp"

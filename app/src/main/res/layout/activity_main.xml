@@ -7,8 +7,6 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
-
-
     <!-- BOTTOM NAVBAR SECTION -->
     <RelativeLayout
         android:layout_width="wrap_content"
