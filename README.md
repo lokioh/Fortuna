@@ -27,7 +27,7 @@
     </li>
     <li><a href="#features">Features</a></li>
     <li><a href="#non-operational">Non Operational</a></li>
-    <li><a href="#future-improvement">Future Improvement</a></li>
+    <li><a href="#future-improvements">Future Improvements</a></li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
@@ -55,7 +55,8 @@ Or on our mail:
    git clone https://github.com/lokioh/Fortuna
    ```
 2. Create an emulator (worked perfectly on pixel 4, xiaomi mi 9T or pixel 3)
-3. Launch the app on Android Studio
+3. **On your emulator, SET A FINGERPRINT**
+4. Launch the app on Android Studio
  
 <!-- FEATURES -->
 ## Features
