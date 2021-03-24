@@ -128,7 +128,6 @@ public class HomeFragment extends Fragment {
         data.add(new ValueDataEntry("expense", expense));
 
         chart.data(data);
-        chart.legend().enabled(false);
 
         AnyChartView anyChartView = (AnyChartView) view.findViewById(R.id.chart);
         anyChartView.setChart(chart);

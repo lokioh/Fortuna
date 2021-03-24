@@ -46,4 +46,6 @@ dependencies {
     // for fingerprint
     implementation "androidx.biometric:biometric:1.1.0"
 
+    // for charts
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
 }
