@@ -18,7 +18,7 @@
             android:screenOrientation="portrait" />
         <activity android:name=".config.PorfilePictureActivity" />
         <activity
-            android:name=".config.AuthenticationActivity"
+            android:name=".config.NameActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".tutorial.StartUp"

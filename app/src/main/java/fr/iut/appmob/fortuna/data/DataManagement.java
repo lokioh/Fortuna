@@ -1,4 +1,4 @@
-package fr.iut.appmob.fortuna;
+package fr.iut.appmob.fortuna.data;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,17 +8,45 @@ import android.widget.EditText;
 
 public class DataManagement {
 
-    private static final String PREFERENCE_MONEY = "MONEY" ;
+    private static final String CONFIG = "CONFIG";
+    private static final String MONEY = "MONEY" ;
 
-    private DataManagement() {}
+    public static boolean isFirstRun(Context context) {
+        return context.getSharedPreferences("CONFIG", Context.MODE_PRIVATE)
+                .getBoolean("isFirstRun", true);
 
-    public static void setBalance(Context context, String balance) {
-        SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putFloat("balance", Float.parseFloat(balance));
-        editor.apply();
     }
 
+    public static void setFirstAndLastName(Context context, String firstname, String lastname) {
+        SharedPreferences config = context.getSharedPreferences(CONFIG, context.MODE_PRIVATE);
+
+        config.edit().putString("first_name", firstname).commit();
+        config.edit().putString("last_name", lastname).commit();
+
+    }
+
+    public static void setProfilePicture(Context context, int iconID) {
+        context.getSharedPreferences(CONFIG, Context.MODE_PRIVATE).edit()
+                .putInt("icon", iconID)
+                .commit();
+
+    }
+
+    public static void setFirstRun(Context context, boolean value) {
+        context.getSharedPreferences(CONFIG, Context.MODE_PRIVATE).edit()
+                .putBoolean("isFirstRun", value).commit();
+
+    }
+
+    private static final String BALANCE = "balance";
+    public static void setBalance(Context context, String balance) {
+        context.getSharedPreferences(MONEY, context.MODE_PRIVATE).edit()
+                .putFloat(BALANCE, Float.parseFloat(balance))
+                .commit();
+
+    }
+
+    private static final String DEPOSIT = "deposit";
     public static void addNewDeposit(Context context, String depositValue) {
         float income = getIncome(context);
         float newDeposit = Float.parseFloat(depositValue);
@@ -27,101 +55,69 @@ public class DataManagement {
         float balance = getBalance(context);
         float newBalance = balance + newDeposit;
 
-        SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putFloat("deposit", total);
-        editor.putFloat("balance", newBalance);
-        editor.apply();
+        SharedPreferences money = context.getSharedPreferences(MONEY, context.MODE_PRIVATE);
+
+        money.edit().putFloat(DEPOSIT, total).commit();
+        money.edit().putFloat(BALANCE, newBalance).commit();
+
     }
 
-    public static void addNewExpense(Context context, String expenseValue, String catg) {
-        float expensett = getExpense(context, catg);
-        float newExpense = Float.parseFloat(expenseValue);
-        float total = expensett + newExpense;
 
-        float expense = getExpenseTt(context);
-        float totalL = expense + newExpense;
+    private static final String EXPENSE = "expense";
+    public static void addNewExpense(Context context, String expenseValue, String category) {
+        float expenseTotalCategory = getExpenseOfCategory(context, category.toLowerCase());
+        float newExpense = Float.parseFloat(expenseValue);
+        float newTotalCategory = expenseTotalCategory + newExpense;
+
+        float expenseTotal = getExpense(context);
+        float newExpenseTotal = expenseTotal + newExpense;
 
         float balance = getBalance(context);
         float newBalance = balance - newExpense;
 
-        String dbName = "expense" + catg;
+        String dbName = EXPENSE + category;
 
-        SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putFloat("expense", totalL);
-        editor.putFloat(dbName, total);
-        editor.putFloat("balance", newBalance);
-        editor.apply();
+        SharedPreferences money = context.getSharedPreferences(MONEY, context.MODE_PRIVATE);
+
+        money.edit().putFloat(EXPENSE, newExpenseTotal).commit();
+        money.edit().putFloat(BALANCE, newBalance).commit();
+        money.edit().putFloat(dbName, newTotalCategory).commit();
+
     }
 
+    // GETTER FOR THE BALANCE / INCOME / EXPENSE - HOME FRAGMENT
     public static float getIncome(Context context) {
-        SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
-        return sharedPref.getFloat("deposit", 0);
+        return context.getSharedPreferences(MONEY, context.MODE_PRIVATE)
+                .getFloat(DEPOSIT, 0);
+
     }
 
-    public static float getExpense(Context context, String catg) {
-        SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
-        String dbName = "expense" + catg;
-        return sharedPref.getFloat(dbName, 0);
+    public static float getExpenseOfCategory(Context context, String category) {
+        return context.getSharedPreferences(MONEY, context.MODE_PRIVATE)
+                .getFloat(EXPENSE + category, 0);
+
     }
 
     public static float getBalance(Context context) {
-        SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
-        return sharedPref.getFloat("balance", 0);
+        return context.getSharedPreferences(MONEY, context.MODE_PRIVATE)
+                .getFloat(BALANCE, 0);
+
     }
 
-    public static float getExpenseTt(Context context) {
-        SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
-        return sharedPref.getFloat("expense", 0);
+    private static float getExpense(Context context) {
+        return context.getSharedPreferences(MONEY, context.MODE_PRIVATE)
+                .getFloat(EXPENSE, 0);
     }
 
-    public static float getProgressHome(Context context) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
-        float value = sharedPreferences.getFloat("expenseHome", 0);
-        float progress = (value * 100) / (getExpenseTt(context));
+    // Get the progress bar
+    private final static int PERCENT = 100;
+    public static int getProgress(Context context, String category) {
+        float value = context.getSharedPreferences(MONEY, context.MODE_PRIVATE)
+                .getFloat(EXPENSE + category.toLowerCase(), 0);
 
-        return progress;
+        return (int) ((value * PERCENT) / (getExpense(context)));
     }
 
-    public static float getProgressPhone(Context context) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
-        float value = sharedPreferences.getFloat("expensePhone", 0);
-        float progress = (value * 100) / (getExpenseTt(context));
-
-        return progress;
-    }
-
-    public static float getProgressCar(Context context) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
-        float value = sharedPreferences.getFloat("expenseCar", 0);
-        float progress = (value * 100) / (getExpenseTt(context));
-
-        return progress;
-    }
-
-    public static float getProgressHealth(Context context) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
-        float value = sharedPreferences.getFloat("expenseHealth", 0);
-        float progress = (value * 100) / (getExpenseTt(context));
-
-        return progress;
-    }
-
-    public static float getProgressFood(Context context) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
-        float value = sharedPreferences.getFloat("expenseFood", 0);
-        float progress = (value * 100) / (getExpenseTt(context));
-
-        return progress;
-    }
-
-    public static float getProgressOther(Context context) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences(PREFERENCE_MONEY, context.MODE_PRIVATE);
-        float value = sharedPreferences.getFloat("expenseOther", 0);
-        float progress = (value * 100) / (getExpenseTt(context));
-
-        return progress;
-    }
+    private DataManagement() {}
 
 }
