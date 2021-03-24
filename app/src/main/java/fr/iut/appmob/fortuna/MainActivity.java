@@ -15,7 +15,9 @@ import android.view.animation.AnimationUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
-import fr.iut.appmob.fortuna.config.AuthenticationActivity;
+import fr.iut.appmob.fortuna.config.NameActivity;
+import fr.iut.appmob.fortuna.data.DataManagement;
+import fr.iut.appmob.fortuna.init.Loading;
 import fr.iut.appmob.fortuna.popup.actions.NewDeposit;
 import fr.iut.appmob.fortuna.popup.actions.NewSpending;
 import fr.iut.appmob.fortuna.views.HomeFragment;
@@ -34,21 +36,15 @@ public class MainActivity extends AppCompatActivity {
     private static ChipNavigationBar navbar;
     private FragmentManager manager;
 
-    private static SharedPreferences CONFIG;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         new Loading(this).startLoading();
 
-        CONFIG = getSharedPreferences("CONFIG", Context.MODE_PRIVATE);
-        boolean isFirstRun = CONFIG.getBoolean("isFirstRun", true);
-
-        if (isFirstRun) {
+        if (DataManagement.isFirstRun(MainActivity.this)) {
             openConfigActivity();
         }
-        CONFIG.edit().putBoolean("isFirstRun", false).commit();
-
+        DataManagement.setFirstRun(MainActivity.this, false);
         setContentView(R.layout.activity_main);
 
         // init our differents elements
@@ -66,16 +62,19 @@ public class MainActivity extends AppCompatActivity {
 
     public static ChipNavigationBar getNavbar() {
         return navbar;
+
     }
 
     private void openConfigActivity(){
-        startActivity(new Intent(this, AuthenticationActivity.class));
+        startActivity(new Intent(this, NameActivity.class));
+
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         new Loading(this).startLoading();
+
     }
 
     public void setButtons() {
@@ -154,8 +153,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
     // animate the buttons according to the state of
     // the action button open or close
     private void animateBtn () {
@@ -208,6 +205,8 @@ public class MainActivity extends AppCompatActivity {
     // on the bottom navbar
     private void setFragment(Fragment fragment) {
         this.manager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+
     }
+
 }
 

@@ -10,7 +10,7 @@ import android.widget.TextView;
 import fr.iut.appmob.fortuna.MainActivity;
 import fr.iut.appmob.fortuna.R;
 import fr.iut.appmob.fortuna.popup.Popup;
-import fr.iut.appmob.fortuna.DataManagement;
+import fr.iut.appmob.fortuna.data.DataManagement;
 
 public class NewDeposit extends Popup {
 
@@ -36,7 +36,9 @@ public class NewDeposit extends Popup {
                 findViewById(R.id.titleAddNewDepositPopup),
                 findViewById(R.id.valueAddNewDepositPopup),
         });
+
     }
+
 
     @Override
     public void validate() {
@@ -46,12 +48,12 @@ public class NewDeposit extends Popup {
         if (value.toString().equals("")) {
             super.getEditText(0).setError("Error : can't be empty !");
         } else {
-            Log.i("NewDeposit", "value : " + value + ", " + "category : deposit" );
             DataManagement.addNewDeposit(getContext(), depositValue);
             MainActivity.getNavbar().setItemSelected(R.id.menuHome, false);
             MainActivity.getNavbar().setItemSelected(R.id.menuHome, true);
             this.dismiss();
         }
+
     }
 
 }

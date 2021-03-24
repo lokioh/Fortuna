@@ -1,25 +1,23 @@
 package fr.iut.appmob.fortuna.views;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.text.DecimalFormat;
 
-import fr.iut.appmob.fortuna.DataManagement;
+import fr.iut.appmob.fortuna.data.DataManagement;
 import fr.iut.appmob.fortuna.R;
 
 /**
@@ -38,11 +36,17 @@ public class StatsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    TextView textView_homeView, textView_phoneView, textView_carView,
-            textView_healthView, textView_foodView, textView_otherView;
-
-    ProgressBar progressBar_home, progressBar_phone, progressBar_car,
-            progressBar_health, progressBar_food, progressBar_other;
+    private static TextView[] txtViews;
+    private static ProgressBar[] progressBars;
+    private static int[] progessBarValues;
+    private static final String[] categories = {
+            "home",
+            "phone",
+            "car",
+            "health",
+            "food",
+            "other"
+    };
 
     public StatsFragment() {
         // Required empty public constructor
@@ -78,58 +82,58 @@ public class StatsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_stats, container, false);
+        Activity activity = getActivity();
 
-        textView_homeView = (TextView) view.findViewById(R.id.textView_homeValue);
-        textView_phoneView = (TextView) view.findViewById(R.id.textView_phoneValue);
-        textView_carView = (TextView) view.findViewById(R.id.textView_carValue);
-        textView_healthView = (TextView) view.findViewById(R.id.textView_healthValue);
-        textView_foodView = (TextView) view.findViewById(R.id.textView_foodValue);
-        textView_otherView = (TextView) view.findViewById(R.id.textView_otherValue);
-
-        int homeProgress = (int) DataManagement.getProgressHome(getActivity());
-        int phoneProgress = (int) DataManagement.getProgressPhone(getActivity());
-        int carProgress = (int) DataManagement.getProgressCar(getActivity());
-        int healthProgress = (int) DataManagement.getProgressHealth(getActivity());
-        int foodProgress = (int) DataManagement.getProgressFood(getActivity());
-        int otherProgress = (int) DataManagement.getProgressOther(getActivity());
-
-        progressBar_home = (ProgressBar) view.findViewById(R.id.progressBar_home);
-        progressBar_phone = (ProgressBar) view.findViewById(R.id.progressBar_phone);
-        progressBar_car = (ProgressBar) view.findViewById(R.id.progressBar_car);
-        progressBar_health = (ProgressBar) view.findViewById(R.id.progressBar_health);
-        progressBar_food = (ProgressBar) view.findViewById(R.id.progressBar_food);
-        progressBar_other = (ProgressBar) view.findViewById(R.id.progressBar_other);
-        progressBar_home.setProgress(homeProgress);
-        progressBar_phone.setProgress(phoneProgress);
-        progressBar_car.setProgress(carProgress);
-        progressBar_health.setProgress(healthProgress);
-        progressBar_food.setProgress(foodProgress);
-        progressBar_other.setProgress(otherProgress);
-
+        init(view, activity);
         setContent();
 
         return view;
+
     }
 
-    public void setContent() {
+    // init our needed arrays
+    private void init(View view, Activity activity) {
+        txtViews = new TextView[] {
+                (TextView) view.findViewById(R.id.textView_homeValue),
+                (TextView) view.findViewById(R.id.textView_phoneValue),
+                (TextView) view.findViewById(R.id.textView_carValue),
+                (TextView) view.findViewById(R.id.textView_healthValue),
+                (TextView) view.findViewById(R.id.textView_foodValue),
+                (TextView) view.findViewById(R.id.textView_otherValue)
+        };
 
-        SharedPreferences MONEY = this.getActivity().getSharedPreferences("MONEY", Context.MODE_PRIVATE);
+        progressBars = new ProgressBar[] {
+                (ProgressBar) view.findViewById(R.id.progressBar_home),
+                (ProgressBar) view.findViewById(R.id.progressBar_phone),
+                (ProgressBar) view.findViewById(R.id.progressBar_car),
+                (ProgressBar) view.findViewById(R.id.progressBar_health),
+                (ProgressBar) view.findViewById(R.id.progressBar_food),
+                (ProgressBar) view.findViewById(R.id.progressBar_other)
+        };
 
-        Float homeValue = MONEY.getFloat("expenseHome", 0);
-        Float phoneValue = MONEY.getFloat("expensePhone",0);
-        Float carValue = MONEY.getFloat("expenseCar", 0);
-        Float healthValue = MONEY.getFloat("expenseHealth", 0);
-        Float foodValue = MONEY.getFloat("expenseFood", 0);
-        Float otherValue = MONEY.getFloat("expenseOther", 0);
+        progessBarValues = new int[] {
+                DataManagement.getProgress(activity, categories[0]),
+                DataManagement.getProgress(activity, categories[1]),
+                DataManagement.getProgress(activity, categories[2]),
+                DataManagement.getProgress(activity, categories[3]),
+                DataManagement.getProgress(activity, categories[4]),
+                DataManagement.getProgress(activity, categories[5])
+        };
+
+    }
+
+    // set fragment content
+    private void setContent() {
+        SharedPreferences MONEY = getActivity().getSharedPreferences("MONEY", Context.MODE_PRIVATE);
+
         DecimalFormat df = new DecimalFormat("#.###");
-        textView_homeView.setText("- $" + df.format(homeValue));
-        textView_phoneView.setText("- $" + df.format(phoneValue));
-        textView_carView.setText("- $" + df.format(carValue));
-        textView_healthView.setText("- $" + df.format(healthValue));
-        textView_foodView.setText("- $" + df.format(foodValue));
-        textView_otherView.setText("- $" + df.format(otherValue));
+        for (int i = 0; i < txtViews.length; ++i)
+            txtViews[i].setText("- $" + df.format(MONEY.getFloat("expense" + categories[i], 0)));
+
+        for (int i = 0; i < progressBars.length; ++i)
+            progressBars[i].setProgress(progessBarValues[i]);
+
     }
 
 }

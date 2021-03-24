@@ -17,21 +17,19 @@ import fr.iut.appmob.fortuna.MainActivity;
 import fr.iut.appmob.fortuna.R;
 import fr.iut.appmob.fortuna.views.HomeFragment;
 
-public class Popup extends Dialog {
+public abstract class Popup extends Dialog {
     private String[] texts;
     private Button[] buttons;
     private TextView[] textViews;
     private EditText[] editTexts;
 
     public Popup(Activity activity, String[] texts) {
-
         super(activity, R.style.dialog_theme);
-
         this.texts = texts;
 
     }
 
-    public void setButtons(Button[] buttons) { this.buttons = buttons; }
+    public void setButtons(Button[] buttons) {this.buttons = buttons;}
 
     public void setEditTexts(EditText[] editTexts) {this.editTexts = editTexts;}
     public void setTextViews(TextView[] textViews) {this.textViews = textViews;}
@@ -40,6 +38,7 @@ public class Popup extends Dialog {
         if (idx < 0) return null;
         if (idx > 1) return null;
         return editTexts[idx];
+
     }
 
     // build the dialog box and put in place the listeners
@@ -61,17 +60,17 @@ public class Popup extends Dialog {
                 validate();
             }
         });
+
     }
 
     // cancel the action
     public void cancel() {
         super.cancel();
+
     };
 
     // confirm the action, need to be implemented
-    public void validate() {
-        return;
-    }
+    public abstract void validate();
 
     
 

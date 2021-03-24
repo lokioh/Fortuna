@@ -9,13 +9,13 @@ import androidx.biometric.BiometricPrompt;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
-public class Authentification {
+public class Authentication {
     private Activity activity;
     private BiometricManager manager;
     private BiometricPrompt prompt;
     private BiometricPrompt.PromptInfo info;
 
-    public Authentification(Activity activity) {
+    public Authentication(Activity activity) {
         this.activity = activity;
         this.manager = BiometricManager.from(activity);
         this.prompt = new BiometricPrompt((FragmentActivity) activity, ContextCompat.getMainExecutor(activity), new BiometricPrompt.AuthenticationCallback() {
@@ -26,7 +26,7 @@ public class Authentification {
         });
 
         this.info = new BiometricPrompt.PromptInfo.Builder()
-                .setTitle("Authentification")
+                .setTitle("Authentication")
                 .setNegativeButtonText("Ignore")
                 .build();
     }

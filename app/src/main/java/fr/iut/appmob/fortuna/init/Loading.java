@@ -1,4 +1,4 @@
-package fr.iut.appmob.fortuna;
+package fr.iut.appmob.fortuna.init;
 
 import android.app.Activity;
 import android.os.Handler;
@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AlertDialog.Builder;
+
+import fr.iut.appmob.fortuna.R;
 
 public class Loading {
     private Activity activity;
@@ -32,7 +34,7 @@ public class Loading {
             @Override
             public void run() {
                 stopLoading();
-                new Authentification(activity).start();
+                new Authentication(activity).start();
             }
         }, ANIMATION_TIMEOUT);
     }

@@ -11,11 +11,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import fr.iut.appmob.fortuna.data.DataManagement;
 import fr.iut.appmob.fortuna.init.Loading;
 import fr.iut.appmob.fortuna.R;
 
-public class AuthenticationActivity extends AppCompatActivity {
+public class NameActivity extends AppCompatActivity {
 
+    private static final String errorMsg = "Error : can't be empty !";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,30 +29,30 @@ public class AuthenticationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 EditText firstnameInput = (EditText) findViewById(R.id.inputFirstNameForm);
                 Editable firstnameValue = firstnameInput.getText();
+
                 EditText lastnameInput = (EditText) findViewById(R.id.inputLastNameForm);
                 Editable lastnameValue;
+
                 if (firstnameValue.toString().equals("")) {
-                    firstnameInput.setError("Error : can't be empty !");
+                    firstnameInput.setError(errorMsg);
                 } else {
                     lastnameValue = lastnameInput.getText();
                     if (lastnameValue.toString().equals("")) {
-                        lastnameInput.setError("Error : can't be empty !");
+                        lastnameInput.setError(errorMsg);
                     } else {
-                        Log.e("Setting", firstnameValue.toString());
-                        SharedPreferences CONFIG = getSharedPreferences("CONFIG", Context.MODE_PRIVATE);
-                        CONFIG.edit().putString("first_name", firstnameValue.toString()).commit();
-                        CONFIG.edit().putString("last_name", lastnameValue.toString()).commit();
+                        DataManagement.setFirstAndLastName(NameActivity.this, firstnameValue.toString(), lastnameValue.toString());
                         openChooseIconActivity();
                     }
                 }
-
-
-
             }
         });
+
     }
 
+    // open the next Form
     private void openChooseIconActivity() {
         startActivity(new Intent(this, ProfilePictureActivity.class));
+
     }
+
 }

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import fr.iut.appmob.fortuna.R;
+import fr.iut.appmob.fortuna.data.DataManagement;
 
 public class ProfilePictureActivity extends AppCompatActivity {
     private static int icon = R.drawable.ic_man;
@@ -15,6 +16,7 @@ public class ProfilePictureActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_picture);
+
         findViewById(R.id.imageWoman).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,16 +40,16 @@ public class ProfilePictureActivity extends AppCompatActivity {
         findViewById(R.id.buttonPP).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getSharedPreferences("CONFIG", Context.MODE_PRIVATE).edit()
-                        .putInt("icon", icon)
-                        .commit();
+                DataManagement.setProfilePicture(ProfilePictureActivity.this, icon);
                 openInitFirstCardActivity();
             }
         });
+
     }
 
 
     private void openInitFirstCardActivity() {
         startActivity(new Intent(this, CardActivity.class));
+
     }
 }

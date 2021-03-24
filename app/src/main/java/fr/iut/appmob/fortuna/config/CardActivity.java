@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 import fr.iut.appmob.fortuna.R;
 import fr.iut.appmob.fortuna.tutorial.StartUp;
-import fr.iut.appmob.fortuna.DataManagement;
+import fr.iut.appmob.fortuna.data.DataManagement;
 
 public class CardActivity extends AppCompatActivity {
 
@@ -26,7 +26,6 @@ public class CardActivity extends AppCompatActivity {
                 EditText balanceInput = (EditText) findViewById(R.id.inputBalance);
                 Editable balanceGiven = balanceInput.getText();
 
-
                 if (balanceGiven.toString().equals("")) {
                     balance = "0";
                 } else {
@@ -37,9 +36,12 @@ public class CardActivity extends AppCompatActivity {
                 openTutorialActivity();
             }
         });
+
     }
 
     private void openTutorialActivity() {
         startActivity(new Intent(this, StartUp.class));
+
     }
+
 }

@@ -10,22 +10,22 @@ import android.widget.TextView;
 import fr.iut.appmob.fortuna.MainActivity;
 import fr.iut.appmob.fortuna.R;
 import fr.iut.appmob.fortuna.popup.Popup;
-import fr.iut.appmob.fortuna.DataManagement;
+import fr.iut.appmob.fortuna.data.DataManagement;
 
 public class NewSpending extends Popup {
 
-    EditText editText_newSpending;
-    EditText editText_categories;
+    EditText editTextNewSpending;
+    EditText editTextCategory;
 
     private static final String[] CATEGORIES = {
-            "Home",
-            "Phone",
-            "Car",
-            "Health",
-            "Food",
-            "Sport",
-            "Gift",
-            "Other"
+            "home",
+            "phone",
+            "car",
+            "health",
+            "food",
+            "sport",
+            "gift",
+            "other"
     };
 
     public NewSpending(Activity activity, String title) {
@@ -34,6 +34,7 @@ public class NewSpending extends Popup {
                 "Value :",
                 "Category :"
         });
+
         setContentView(R.layout.popup_newspending);
 
         super.setButtons(new Button[] {
@@ -51,34 +52,36 @@ public class NewSpending extends Popup {
                 findViewById(R.id.valueAddNewSpendingPopup),
                 findViewById(R.id.categoryAddNewSpendingPopup)
         });
+
     }
 
     @Override
     public void validate() {
         Editable value = super.getEditText(0).getText();
-        editText_newSpending = findViewById(R.id.editTextValueAddNewSpendingPopup);
-        String spendingValue = editText_newSpending.getText().toString();
-        Editable category;
+        editTextNewSpending = findViewById(R.id.editTextValueAddNewSpendingPopup);
+        String spendingValue = editTextNewSpending.getText().toString();
+        Editable categoryInput;
+
         if (value.toString().equals("")) {
             super.getEditText(0).setError("Error : can't be empty !");
         } else {
-            category = super.getEditText(1).getText();
-            if(category.toString().equals("")) {
+            categoryInput = super.getEditText(1).getText();
+            if(categoryInput.toString().equals("")) {
                 super.getEditText(1).setError("Error : can't be empty !");
-            } else if (!isValid(category.toString())) {
+            } else if (!isValid(categoryInput.toString().toLowerCase())) {
                 super.getEditText(1).setError("Error : category should be : Home or " +
                         "Phone or Car or Health or Food or Sport " +
                         "or Gift or Other");
             } else {
-                editText_categories = findViewById(R.id.editTextCategoryAddNewSpendingPopup);
-                String categories = editText_categories.getText().toString();
-                DataManagement.addNewExpense(getContext(), spendingValue, categories);
-                Log.i("NewSpending", "value : " + value + ", " + "category : " + category);
+                editTextCategory = findViewById(R.id.editTextCategoryAddNewSpendingPopup);
+                String category = editTextCategory.getText().toString().toLowerCase();
+                DataManagement.addNewExpense(getContext(), spendingValue, category);
                 MainActivity.getNavbar().setItemSelected(R.id.menuHome, false);
                 MainActivity.getNavbar().setItemSelected(R.id.menuHome, true);
                 this.dismiss();
             }
         }
+
     }
 
     // check if the category given is in the CATEGORIES allowed
@@ -90,5 +93,6 @@ public class NewSpending extends Popup {
         }
 
         return !valid;
+
     }
 }

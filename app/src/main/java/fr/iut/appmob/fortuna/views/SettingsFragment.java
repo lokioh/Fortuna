@@ -31,6 +31,9 @@ public class SettingsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private static TextView name;
+    private static ImageView icon;
+
     public SettingsFragment() {
         // Required empty public constructor
     }
@@ -66,20 +69,37 @@ public class SettingsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
-        TextView name = (TextView) view.findViewById(R.id.userText);
-        ImageView icon = (ImageView) view.findViewById(R.id.userIcon);
-        SharedPreferences CONFIG = this.getActivity().getSharedPreferences("CONFIG", Context.MODE_PRIVATE);
 
-        String firstName = CONFIG.getString("first_name", "NONE");
-        String lastName = CONFIG.getString("last_name", "NONE");
+        init(view);
+        setContent();
 
-        String txt = firstName.substring(0, 1).toUpperCase() + firstName.substring(1) +
-                " " + lastName.substring(0, 1).toUpperCase() + lastName.substring(1);
-
-        name.setText(txt);
-        icon.setImageResource(CONFIG.getInt("icon", R.drawable.ic_man));
         return view;
+
     }
+
+    // init our needed variables
+    private void init(View view) {
+        name = (TextView) view.findViewById(R.id.userText);
+        icon = (ImageView) view.findViewById(R.id.userIcon);
+
+    }
+
+    // set fragment content
+    private void setContent() {
+        SharedPreferences CONFIG = getActivity().getSharedPreferences("CONFIG", Context.MODE_PRIVATE);
+
+        name.setText(concatName(CONFIG.getString("first_name", "NONE"),
+                                CONFIG.getString("last_name", "NONE")));
+        icon.setImageResource(CONFIG.getInt("icon", R.drawable.ic_man));
+
+    }
+
+    // concat str1 with str2 and put the first letter of each in UpperCase
+    private String concatName(String str1, String str2) {
+        return str1.substring(0, 1).toUpperCase() + str1.substring(1) +
+                " " + str2.substring(0, 1).toUpperCase() + str2.substring(1);
+
+    }
+
 }

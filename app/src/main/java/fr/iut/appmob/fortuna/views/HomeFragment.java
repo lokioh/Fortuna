@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -36,7 +37,9 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    TextView textView_balance, textView_income, textView_expense;
+    private TextView txtViewBalance;
+    private TextView txtViewIncome;
+    private TextView txtViewExpense;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -72,33 +75,32 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        textView_balance = (TextView) view.findViewById(R.id.balance);
-        textView_income = (TextView) view.findViewById(R.id.income);
-        textView_expense = (TextView) view.findViewById(R.id.expense);
-
+        init(view);
         setContent();
 
         return view;
+
     }
 
-    public void setContent() {
+    // init our needed variables
+    private void init(View view) {
+        txtViewBalance = (TextView) view.findViewById(R.id.balance);
+        txtViewIncome = (TextView) view.findViewById(R.id.income);
+        txtViewExpense = (TextView) view.findViewById(R.id.expense);
 
+    }
+
+    // set fragment content
+    private void setContent() {
         SharedPreferences MONEY = this.getActivity().getSharedPreferences("MONEY", Context.MODE_PRIVATE);
 
-        Float balanceValue = MONEY.getFloat("balance", 0);
-        Float incomeValue = MONEY.getFloat("deposit",0);
-        Float expenseValue = MONEY.getFloat("expense", 0);
         DecimalFormat df = new DecimalFormat("#.###");
-        textView_balance.setText("$" + df.format(balanceValue));
-        textView_income.setText("$" + df.format(incomeValue));
-        textView_expense.setText("$" + df.format(expenseValue));
-
+        txtViewBalance.setText("$" + df.format(MONEY.getFloat("balance", 0)));
+        txtViewIncome.setText("$" + df.format(MONEY.getFloat("deposit",0)));
+        txtViewExpense.setText("$" + df.format( MONEY.getFloat("expense", 0)));
 
     }
-
-
 
 }
