@@ -1,35 +1,28 @@
 package fr.iut.appmob.fortuna.views;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.os.Handler;
-import android.renderscript.Sampler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.anychart.AnyChart;
 import com.anychart.AnyChartView;
 import com.anychart.chart.common.dataentry.DataEntry;
 import com.anychart.chart.common.dataentry.ValueDataEntry;
-import com.anychart.charts.Pie;
-import com.anychart.core.stock.series.Line;
+import com.anychart.charts.Cartesian;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.Map;
 
-import fr.iut.appmob.fortuna.MainActivity;
 import fr.iut.appmob.fortuna.R;
-import fr.iut.appmob.fortuna.popup.Popup;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -116,22 +109,30 @@ public class HomeFragment extends Fragment {
 
     }
 
+    // set the chart
     private void setChart(View view) {
-        SharedPreferences MONEY = this.getActivity().getSharedPreferences("MONEY", Context.MODE_PRIVATE);
-        Float deposit = MONEY.getFloat("deposit",0);
-        Float expense = MONEY.getFloat("expense",0);
+        // get chart data
+        final SharedPreferences CHART = this.getActivity().getSharedPreferences("CHART", Context.MODE_PRIVATE);
+        Map<String, ?> data = CHART.getAll();
 
-        Pie chart = AnyChart.pie();
+        ArrayList<Float> dataAsFloat = new ArrayList<>();
+        ArrayList<String> keys = new ArrayList<>();
 
-        ArrayList<DataEntry> data = new ArrayList<>();
-        data.add(new ValueDataEntry("deposit", deposit));
-        data.add(new ValueDataEntry("expense", expense));
+        for (Map.Entry<String, ?> element : data.entrySet()) {
+            dataAsFloat.add((Float) element.getValue());
+            keys.add(element.getKey());
+        }
 
-        chart.data(data);
+        DataEntry[] chartData = new DataEntry[dataAsFloat.size()];
+        for (int i = 0; i < dataAsFloat.size(); ++i) {
+            chartData[i] = new ValueDataEntry(keys.get(i), dataAsFloat.get(i));
+        }
 
+        // create chart
+        Cartesian chart = AnyChart.line();
+        chart.data(Arrays.asList(chartData));
         AnyChartView anyChartView = (AnyChartView) view.findViewById(R.id.chart);
         anyChartView.setChart(chart);
-        chart.select(0);
 
     }
 

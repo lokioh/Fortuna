@@ -1,15 +1,15 @@
 package fr.iut.appmob.fortuna.data;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
-import android.widget.EditText;
+
+import java.time.LocalTime;
 
 public class DataManagement {
 
     private static final String CONFIG = "CONFIG";
     private static final String MONEY = "MONEY" ;
+    private static final String CHART = "CHART";
 
     public static boolean isFirstRun(Context context) {
         return context.getSharedPreferences("CONFIG", Context.MODE_PRIVATE)
@@ -56,8 +56,10 @@ public class DataManagement {
         float newBalance = balance + newDeposit;
 
         SharedPreferences money = context.getSharedPreferences(MONEY, context.MODE_PRIVATE);
+        SharedPreferences chart = context.getSharedPreferences(CHART, context.MODE_PRIVATE);
 
         money.edit().putFloat(DEPOSIT, total).commit();
+        chart.edit().putFloat(LocalTime.now().toString(), newBalance).commit();
         money.edit().putFloat(BALANCE, newBalance).commit();
 
     }
@@ -78,9 +80,11 @@ public class DataManagement {
         String dbName = EXPENSE + category;
 
         SharedPreferences money = context.getSharedPreferences(MONEY, context.MODE_PRIVATE);
+        SharedPreferences chart = context.getSharedPreferences(CHART, context.MODE_PRIVATE);
 
         money.edit().putFloat(EXPENSE, newExpenseTotal).commit();
         money.edit().putFloat(BALANCE, newBalance).commit();
+        chart.edit().putFloat(LocalTime.now().toString(), newBalance).commit();
         money.edit().putFloat(dbName, newTotalCategory).commit();
 
     }
