@@ -89,8 +89,8 @@ public class SettingsFragment extends Fragment {
     private void setContent() {
         SharedPreferences CONFIG = getActivity().getSharedPreferences("CONFIG", Context.MODE_PRIVATE);
 
-        name.setText(concatName(CONFIG.getString("first_name", "NONE"),
-                                CONFIG.getString("last_name", "NONE")));
+        name.setText(concatName(CONFIG.getString("first_name", "NONE").toLowerCase(),
+                                CONFIG.getString("last_name", "NONE").toLowerCase()));
         icon.setImageResource(CONFIG.getInt("icon", R.drawable.ic_man));
 
     }
