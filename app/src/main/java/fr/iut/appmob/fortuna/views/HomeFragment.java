@@ -20,6 +20,7 @@ import com.anychart.charts.Cartesian;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Map;
 
 import fr.iut.appmob.fortuna.R;
@@ -115,17 +116,17 @@ public class HomeFragment extends Fragment {
         final SharedPreferences CHART = this.getActivity().getSharedPreferences("CHART", Context.MODE_PRIVATE);
         Map<String, ?> data = CHART.getAll();
 
+        ArrayList<String> sortedKeys = new ArrayList<>(data.keySet());
+        Collections.sort(sortedKeys);
         ArrayList<Float> dataAsFloat = new ArrayList<>();
-        ArrayList<String> keys = new ArrayList<>();
 
-        for (Map.Entry<String, ?> element : data.entrySet()) {
-            dataAsFloat.add((Float) element.getValue());
-            keys.add(element.getKey());
+        for (String key : sortedKeys) {
+            dataAsFloat.add((Float) data.get(key));
         }
 
         DataEntry[] chartData = new DataEntry[dataAsFloat.size()];
-        for (int i = dataAsFloat.size() - 1; i >= 0; --i) {
-            chartData[i] = new ValueDataEntry(keys.get(i), dataAsFloat.get(i));
+        for (int i = 0; i < dataAsFloat.size() ; ++i) {
+            chartData[i] = new ValueDataEntry(sortedKeys.get(i), dataAsFloat.get(i));
         }
 
         // create chart
