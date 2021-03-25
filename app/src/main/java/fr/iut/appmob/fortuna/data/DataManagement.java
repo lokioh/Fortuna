@@ -44,6 +44,10 @@ public class DataManagement {
                 .putFloat(BALANCE, Float.parseFloat(balance))
                 .commit();
 
+        context.getSharedPreferences(CHART, context.MODE_PRIVATE).edit()
+                .putFloat(LocalTime.now().toString(), Float.parseFloat(balance))
+                .commit();
+
     }
 
     private static final String DEPOSIT = "deposit";
