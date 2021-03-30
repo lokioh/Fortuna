@@ -43,9 +43,9 @@ you can contact us on our respective discord:
   - Loki#8679
 
 Or on our mail:
-  - vincent.ngy.pro@gmail.com
-  - marwan.mezroui@gmail.com
-  - loiclim.etu@gmail.com
+  - vincent.ngy.pro at gmail com
+  - marwan.mezroui at gmail com
+  - loiclim.etu at gmail com
 
 <!-- GETTING STARTED -->
 ## Install And Launch It
